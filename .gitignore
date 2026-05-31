@@ -1,0 +1,6 @@
+# Private master (contains phone number) — not published
+resume.html
+
+# Generated artifacts
+*.pdf
+.playwright-mcp/
