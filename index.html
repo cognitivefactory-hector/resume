@@ -24,7 +24,7 @@
       color: var(--ink);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 10.5pt;
-      line-height: 1.34;
+      line-height: 1.45;
     }
 
     body {
@@ -62,7 +62,7 @@
     .selected-work a:hover { text-decoration: underline; }
     .selected-work .role .meta a { color: var(--muted); }
 
-    section { margin-top: 9pt; }
+    section { margin-top: 14pt; }
 
     section > h2 {
       font-size: 10.5pt;
@@ -70,8 +70,8 @@
       text-transform: uppercase;
       letter-spacing: 1.2px;
       color: var(--accent);
-      margin: 0 0 4pt 0;
-      padding-bottom: 2pt;
+      margin: 0 0 6pt 0;
+      padding-bottom: 3pt;
       border-bottom: 1px solid var(--rule);
     }
 
@@ -79,7 +79,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-top: 6pt;
+      margin-top: 8pt;
       margin-bottom: 3pt;
       font-size: 10.5pt;
     }
@@ -97,7 +97,7 @@
     }
 
     ul.bullets li {
-      margin-bottom: 1pt;
+      margin-bottom: 2pt;
     }
 
     .capabilities p,
@@ -140,6 +140,12 @@
       .role {
         break-after: avoid;
         page-break-after: avoid;
+      }
+
+      /* Projects render on their own final page */
+      .selected-work {
+        break-before: page;
+        page-break-before: always;
       }
 
       section > h2 {
@@ -228,7 +234,8 @@
         <span class="meta">Burbank, CA &middot; 2018 – Oct 2019</span>
       </div>
       <ul class="bullets">
-        <li>Analyzed and corrected chemical-processing methods; maintained AS9100, NADCAP, and customer-spec compliance; conducted internal audits; supported EHS and Manufacturing Engineering.</li>
+        <li>Analyzed and corrected methods in chemical processing; maintained AS9100, NADCAP, and customer-spec compliance.</li>
+        <li>Conducted internal audits; supported EHS and Manufacturing Engineering.</li>
       </ul>
     </article>
 
@@ -261,12 +268,33 @@
         <span class="meta">California &middot; 1996 – 2000</span>
       </div>
       <ul class="bullets">
-        <li>Ran lot-acceptance and first-article testing for aerospace and printed-circuit-board production; monitored chemical processes in metal refining and waste treatment; analytical and metallurgical testing (ICP-OES, AA, GC, FT-IR, cross-sections for hardness/thickness).</li>
+        <li>Ran lot-acceptance and first-article testing for aerospace and printed-circuit-board production; monitored chemical processes in metal refining and waste treatment.</li>
+        <li>Performed analytical and metallurgical testing &mdash; ICP-OES, AA, GC, FT-IR, and cross-sections for hardness and thickness.</li>
       </ul>
     </article>
   </section>
 
-  <section class="selected-work">
+  <section class="ventures">
+    <h2>Independent Ventures</h2>
+    <div class="role">
+      <span class="title"><strong>Founder</strong> &mdash; SmartXChain &amp; Cognitive Factory</span>
+      <span class="meta">2021 – Present</span>
+    </div>
+    <p><span class="label">smartxchain.com</span> &mdash; analysis and news on frontier technology in blockchain and AI.</p>
+    <p><span class="label">cognitivefactory.ai</span> &mdash; setting up companies for the cognitive revolution; AI-native operating models for industrial and knowledge work.</p>
+  </section>
+
+  <section class="education">
+    <h2>Education</h2>
+    <p><strong>B.S., Chemistry</strong> &mdash; University of Michigan, 1996</p>
+  </section>
+
+  <section class="stack">
+    <h2>Tools &amp; Stack</h2>
+    <p class="stack-line">Docker &middot; Django &middot; PostgreSQL &middot; Git &middot; Linux &middot; Claude Code &middot; Codex &middot; Gemini &middot; CAD (AutoDesk, SolidWorks)</p>
+  </section>
+
+  <section class="selected-work" style="break-before: page; page-break-before: always;">
     <h2>Projects</h2>
     <article class="job">
       <div class="role">
@@ -295,26 +323,6 @@
         <li>Strategy studio with payoff, Greeks, IV surface, and an honest walk-forward + Monte-Carlo backtest (explicit cost model) &mdash; plus a volatility-regime filter that can say <em>sit out</em>: the trade you don't put on. Django &middot; NumPy/SciPy &middot; Plotly. <a href="https://options.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/options-lab">Code &amp; decision record</a>.</li>
       </ul>
     </article>
-  </section>
-
-  <section class="ventures">
-    <h2>Independent Ventures</h2>
-    <div class="role">
-      <span class="title"><strong>Founder</strong> &mdash; SmartXChain &amp; Cognitive Factory</span>
-      <span class="meta">2021 – Present</span>
-    </div>
-    <p><span class="label">smartxchain.com</span> &mdash; analysis and news on frontier technology in blockchain and AI.</p>
-    <p><span class="label">cognitivefactory.ai</span> &mdash; setting up companies for the cognitive revolution; AI-native operating models for industrial and knowledge work.</p>
-  </section>
-
-  <section class="education">
-    <h2>Education</h2>
-    <p><strong>B.S., Chemistry</strong> &mdash; University of Michigan, 1996</p>
-  </section>
-
-  <section class="stack">
-    <h2>Tools &amp; Stack</h2>
-    <p class="stack-line">Docker &middot; Django &middot; PostgreSQL &middot; Git &middot; Linux &middot; Claude Code &middot; Codex &middot; Gemini &middot; CAD (AutoDesk, SolidWorks)</p>
   </section>
 </body>
 </html>
