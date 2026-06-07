@@ -24,7 +24,7 @@
       color: var(--ink);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 10.5pt;
-      line-height: 1.45;
+      line-height: 1.38;
     }
 
     body {
@@ -79,7 +79,7 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-top: 8pt;
+      margin-top: 6pt;
       margin-bottom: 3pt;
       font-size: 10.5pt;
     }
@@ -97,7 +97,7 @@
     }
 
     ul.bullets li {
-      margin-bottom: 2pt;
+      margin-bottom: 1pt;
     }
 
     .capabilities p,
@@ -277,6 +277,15 @@
       </div>
       <ul class="bullets">
         <li>Conversational plant-ops tool over an OR-Tools (CP-SAT) production scheduler &mdash; ask the floor in plain English; the AI <em>proposes</em> a re-sequence, the solver enforces every hard constraint (operator cert, time-between-operations, capacity), and a human approves (the AI can never commit or produce an infeasible plan). Django &middot; Postgres &middot; OR-Tools &middot; Claude. <a href="https://plant.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/plantgpt">Code &amp; decision record</a>.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>SPC Sentinel</strong> &mdash; real-time SPC with drift prediction</span>
+        <span class="meta"><a href="https://spc.hector-garza.com">spc.hector-garza.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>Live statistical-process-control dashboard that forecasts when a wet-process line will drift out of spec <em>before</em> it breaches &mdash; explainable Western Electric / Nelson rules plus a slope-significance trend gate tuned to protect operator trust over raw accuracy (no alert fatigue). Django &middot; Channels (WebSocket) &middot; NumPy/SciPy &middot; Plotly. <a href="https://spc.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/spc-sentinel">Code &amp; decision record</a>.</li>
       </ul>
     </article>
   </section>
