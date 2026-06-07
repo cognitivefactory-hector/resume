@@ -58,7 +58,11 @@
 
     .resume-header .contact a:hover { text-decoration: underline; }
 
-    section { margin-top: 14pt; }
+    .selected-work a { color: var(--accent); text-decoration: none; }
+    .selected-work a:hover { text-decoration: underline; }
+    .selected-work .role .meta a { color: var(--muted); }
+
+    section { margin-top: 11pt; }
 
     section > h2 {
       font-size: 10.5pt;
@@ -259,6 +263,19 @@
       <ul class="bullets">
         <li>Ran lot-acceptance and first-article testing for aerospace and printed-circuit-board production; monitored chemical processes in metal refining and waste treatment.</li>
         <li>Performed analytical and metallurgical testing &mdash; ICP-OES, AA, GC, FT-IR, and cross-sections for hardness and thickness.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="selected-work">
+    <h2>Selected Work</h2>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>PlantGPT</strong> &mdash; agentic production scheduler</span>
+        <span class="meta"><a href="https://plant.hector-garza.com">plant.hector-garza.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>Conversational plant-ops tool over an OR-Tools (CP-SAT) production scheduler &mdash; ask the floor in plain English; the AI <em>proposes</em> a re-sequence, the solver enforces every hard constraint (operator cert, time-between-operations, capacity), and a human approves (the AI can never commit or produce an infeasible plan). Django &middot; Postgres &middot; OR-Tools &middot; Claude. <a href="https://plant.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/plantgpt">Code &amp; decision record</a>.</li>
       </ul>
     </article>
   </section>
