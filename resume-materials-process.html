@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hector Garza — Materials &amp; Process Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #2C5F7C;
+      --ink: #1A1A1A;
+      --muted: #666;
+      --rule: #C9D4DC;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+    }
+
+    body {
+      max-width: 7.5in;
+      margin: 0.55in auto;
+      padding: 0;
+    }
+
+    .resume-header {
+      margin-bottom: 14pt;
+    }
+
+    .resume-header h1 {
+      font-size: 26pt;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin: 0 0 4pt 0;
+      color: var(--ink);
+    }
+
+    .resume-header .contact {
+      font-size: 10pt;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    section { margin-top: 14pt; }
+
+    section > h2 {
+      font-size: 10.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--accent);
+      margin: 0 0 6pt 0;
+      padding-bottom: 3pt;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .role {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 8pt;
+      margin-bottom: 3pt;
+      font-size: 10.5pt;
+    }
+
+    .role .title strong { font-weight: 700; }
+    .role .meta {
+      color: var(--muted);
+      font-size: 9.5pt;
+      white-space: nowrap;
+    }
+
+    ul.bullets {
+      margin: 2pt 0 0 0;
+      padding-left: 14pt;
+    }
+
+    ul.bullets li {
+      margin-bottom: 2pt;
+    }
+
+    .capabilities p,
+    .ventures p { margin: 3pt 0; }
+
+    .capabilities .label,
+    .ventures .label {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .stack .stack-line {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 9.5pt;
+      color: var(--ink);
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    .job { margin-top: 8pt; }
+    .job:first-child { margin-top: 4pt; }
+
+    .selected-work a { color: var(--accent); text-decoration: none; }
+    .selected-work a:hover { text-decoration: underline; }
+    .selected-work .role .meta a { color: var(--muted); }
+
+    @page {
+      size: Letter;
+      margin: 0.55in;
+    }
+
+    @media print {
+      html, body {
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        max-width: none;
+      }
+
+      .role {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      /* Projects render on their own final page */
+      .selected-work {
+        break-before: page;
+        page-break-before: always;
+      }
+
+      section > h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      a { color: inherit; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="resume-header">
+    <h1>Hector Garza</h1>
+    <p class="contact">
+      Greensboro, NC &middot; hectorg@smartxchain.com
+      <br />
+      smartxchain.com &middot; cognitivefactory.ai
+    </p>
+  </header>
+
+  <section class="summary">
+    <h2>Summary</h2>
+    <p>
+      Materials &amp; process engineer with 25+ years in aerospace &mdash; developing and qualifying
+      processing methods for metallic, non-metallic, and composite materials, authoring material and
+      process specifications, and driving failure analysis with root-cause / corrective action. Hands-on
+      across NADCAP special processes (composites AC7118, welding AC7110, thermal-spray / HVOF coatings,
+      plating, heat treat, surface enhancement) with materials-test-laboratory depth (XRF, ICP-OES,
+      microscopy, cross-sectioning for hardness and thickness). NADCAP / AS9100 fluent; led audits across
+      multiple OEMs. Also builds AI-powered manufacturing-intelligence tooling (SPC, data pipelines, RCCA),
+      documenting the decisions and trade-offs behind each.
+    </p>
+  </section>
+
+  <section class="capabilities">
+    <h2>Core Capabilities</h2>
+    <p>
+      <span class="label">Materials &amp; Process Engineering</span> &mdash; Material &amp; Process Specification
+      Development &middot; Processing Methods for Metallic / Non-Metallic / Composite Materials &middot;
+      Failure Analysis &amp; Corrective Action &middot; Design Allowables &middot; Surface Treatments &middot;
+      Materials Test Laboratory (XRF &middot; ICP-OES &middot; Microscopy &middot; Cross-Sectioning)
+    </p>
+    <p>
+      <span class="label">Process &amp; Manufacturing</span> &mdash; Aerospace special
+      processes across NADCAP commodities: Chemical Processing (Plating &middot; Anodizing &middot;
+      Etching &middot; Coat Stripping) &middot; Coatings (Thermal Spray / HVOF) &amp; Aerospace Paint &middot; Heat Treating &middot;
+      Composite Layup / Bonding &amp; Cure &middot; Welding (TIG / MIG / Seam) &middot;
+      Surface Enhancement (Shot Peening) &middot; Pyrometry &middot; First Article Inspection &middot;
+      Materials Testing Laboratory &middot; NADCAP &middot; AS9100 &middot; QMS &middot; NCA / RCCA &middot;
+      Tank Chemistry &middot; New-Process Qualification &middot; Customer Audits
+    </p>
+    <p>
+      <span class="label">Design, Tooling &amp; Quality</span> &mdash; Tooling / Fixture / Jig Design &middot;
+      Racking &amp; Masking &middot; GD&amp;T &middot; Metrology &middot; DFM / DFA &middot;
+      Automated Process Equipment (Fanuc Robotics &middot; PLC) &middot; CAD (SolidWorks &middot; AutoCAD)
+    </p>
+    <p>
+      <span class="label">Data &amp; AI Engineering</span> &mdash; SPC / Statistical
+      Process Control &middot; ETL Pipelines &middot; LLM Tooling (Claude Code, Codex,
+      Gemini) &middot; Internal Web Apps &middot; Dashboards &middot; Process Data
+      Unification
+    </p>
+  </section>
+
+  <section class="experience">
+    <h2>Experience</h2>
+
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>TAT Technologies</strong> &mdash; Process Engineer</span>
+        <span class="meta">Greensboro, NC &middot; 2024 – Present</span>
+      </div>
+      <ul class="bullets">
+        <li>Own plating, anodizing, etching, and coat-stripping processes; drive NCA and RCCA across production and quality.</li>
+        <li>Reduced process failure rate from 67% to 3% and drove reworks to near zero through workflow redesign and tighter process control.</li>
+        <li>Improved process capability by 56% via workflow standardization and SPC-driven control.</li>
+        <li>Built SPC dashboards with automated control-limit calculation and alerting on tank chemistry, deposition thickness, and etch rate.</li>
+        <li>Designed data pipelines unifying production and quality data from machines, spreadsheets, and quality records.</li>
+        <li>Developed AI-assisted NCA/RCCA tooling that drafts root-cause narratives and corrective actions from process data.</li>
+        <li>Ship internal applications and CLI tools for engineers and operators, built using Claude Code, Codex, and Gemini.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>Machine Specialties Inc.</strong> &mdash; Process Engineer</span>
+        <span class="meta">Whitsett, NC &middot; 2019 – 2024</span>
+      </div>
+      <ul class="bullets">
+        <li>Owned plating, anodizing, aerospace paint, and thermal-spray / HVOF coating processes end-to-end.</li>
+        <li>Bonded prepreg to components and ran oven cure cycles for bonded composite assemblies; performed pyrometry on cure/thermal equipment.</li>
+        <li>Led NADCAP, AS9100, and customer audits; maintained certification compliance.</li>
+        <li>Stood up new chemical processes from scoping through production qualification.</li>
+        <li>Designed process tooling, fixtures, jigs, racking, and masking for the lines; applied GD&amp;T and metrology to verify conformance, with DFM / DFA producibility input on new-process introductions.</li>
+        <li>Built internal tools for production and quality data collection &mdash; foundation for the AI-driven work that followed.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>Senior SSP Aerospace</strong> &mdash; Quality Assurance Specialist</span>
+        <span class="meta">Burbank, CA &middot; 2018 – Oct 2019</span>
+      </div>
+      <ul class="bullets">
+        <li>Analyzed and corrected methods in chemical processing; maintained AS9100, NADCAP, and customer-spec compliance.</li>
+        <li>Hand layup and oven cure of composite skins/panels and detail bonds for harnesses, under NADCAP AC7118 (composites).</li>
+        <li>Audited composite material control, pyrometry, and material storage (out-time / cold storage) for AC7118 and customer-spec compliance.</li>
+        <li>Welded and audited TIG, MIG, and seam welding to NADCAP AC7110 (incl. /4, /5, /12) and customer specs.</li>
+        <li>Operated and audited thermal-spray and HVOF coating processes to AS9100 / customer specs.</li>
+        <li>Conducted internal audits; supported EHS and Manufacturing Engineering.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>Moog Inc.</strong> &mdash; Materials &amp; Process Chemist</span>
+        <span class="meta">Torrance, CA &middot; 2012 – 2018</span>
+      </div>
+      <ul class="bullets">
+        <li>Directed plating, painting, shot peening, blasting, and heat-treat processes for aerospace controls; trained technicians and senior operators.</li>
+        <li>Reviewed and approved materials and process call-outs on engineering drawings; selected and qualified process vendors.</li>
+        <li>Programmed and troubleshot Fanuc robots, pulsing rectifiers, and PLC systems for automated process equipment; built new recipes and recalibrated controls.</li>
+        <li>Maintained NADCAP and AS9100 compliance; ran pyrometry on thermal-processing equipment; monitored wet-process tank chemistry; ran XRF, microscopy, leak detection, and mechanical testing.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>Danaher</strong> &mdash; Research Associate</span>
+        <span class="meta">Orange, CA &middot; 2000 – 2012</span>
+      </div>
+      <ul class="bullets">
+        <li>Formulated and compression-molded thermoset and photoset polymer composites, adhesives, and methacrylate/acrylate resins &mdash; cured by light and by heat/pressure; prepared FDA/ISO regulatory documentation.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>Chromalloy (Contract)</strong> &mdash; Quality Assurance</span>
+        <span class="meta">California &middot; 1996 – 2000</span>
+      </div>
+      <ul class="bullets">
+        <li>Ran and inspected thermal-spray and HVOF coating processes on aerospace components.</li>
+        <li>Ran lot-acceptance and first-article testing for aerospace and printed-circuit-board production; monitored chemical processes in metal refining and waste treatment.</li>
+        <li>Performed analytical and metallurgical testing &mdash; ICP-OES, AA, GC, FT-IR, and cross-sections for hardness and thickness.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="ventures">
+    <h2>Independent Ventures</h2>
+    <div class="role">
+      <span class="title"><strong>Founder</strong> &mdash; SmartXChain &amp; Cognitive Factory</span>
+      <span class="meta">2021 – Present</span>
+    </div>
+    <p><span class="label">smartxchain.com</span> &mdash; analysis and news on frontier technology in blockchain and AI.</p>
+    <p><span class="label">cognitivefactory.ai</span> &mdash; setting up companies for the cognitive revolution; AI-native operating models for industrial and knowledge work.</p>
+  </section>
+
+  <section class="education">
+    <h2>Education</h2>
+    <p><strong>B.S., Chemistry</strong> &mdash; University of Michigan, 1996</p>
+  </section>
+
+  <section class="stack">
+    <h2>Tools &amp; Stack</h2>
+    <p class="stack-line">Docker &middot; Django &middot; PostgreSQL &middot; Git &middot; Linux &middot; Claude Code &middot; Codex &middot; Gemini &middot; CAD (AutoDesk, SolidWorks)</p>
+  </section>
+
+  <section class="selected-work" style="break-before: page; page-break-before: always;">
+    <h2>Projects</h2>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>Composite Compliance Tracker</strong> &mdash; NADCAP AC7118 readiness from data</span>
+        <span class="meta"><a href="https://composite-compliance-tracker.onrender.com">composite-compliance-tracker.onrender.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>Audit-readiness tracker for composites (NADCAP AC7118): logs the time-sensitive controls &mdash; prepreg out-time, cure cycles, lot traceability &mdash; and maps each record to the criterion it evidences, so readiness is <em>computed from data, not ticked</em>. A missing or expired record flips a criterion to not-ready. Django &middot; Postgres &middot; Plotly. <a href="https://composite-compliance-tracker.onrender.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/composite-compliance-tracker">Code &amp; decision record</a>.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>PlantGPT</strong> &mdash; CP-SAT production scheduler with a gated AI layer</span>
+        <span class="meta"><a href="https://plant.hector-garza.com">plant.hector-garza.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>Conversational plant-ops tool over an OR-Tools (CP-SAT) production scheduler &mdash; ask the floor in plain English; the AI <em>proposes</em> a re-sequence, the solver enforces every hard constraint (operator cert, time-between-operations, capacity), and a human approves (the AI can never commit or produce an infeasible plan). Django &middot; Postgres &middot; OR-Tools &middot; Claude. <a href="https://plant.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/plantgpt">Code &amp; decision record</a>.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>SPC Sentinel</strong> &mdash; real-time SPC with drift prediction</span>
+        <span class="meta"><a href="https://spc.hector-garza.com">spc.hector-garza.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>Live statistical-process-control dashboard that forecasts when a wet-process line will drift out of spec <em>before</em> it breaches &mdash; explainable Western Electric / Nelson rules plus a slope-significance trend gate tuned to protect operator trust over raw accuracy (no alert fatigue). Django &middot; Channels (WebSocket) &middot; NumPy/SciPy &middot; Plotly. <a href="https://spc.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/spc-sentinel">Code &amp; decision record</a>.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>RCCA Copilot</strong> &mdash; agentic root-cause &amp; corrective action</span>
+        <span class="meta"><a href="https://rcca.hector-garza.com">rcca.hector-garza.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>AI agent that drafts a structured 8D / 5-Why root-cause investigation from a nonconformance &mdash; every candidate cause cites retrieved evidence or is flagged <em>insufficient evidence</em>, and nothing reaches a CAPA without engineer sign-off. Django &middot; Postgres &middot; Claude (tool-use). <a href="https://rcca.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/rcca-copilot">Code &amp; decision record</a>.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>Conformance Auditor</strong> &mdash; record-vs-spec verdicts, LLM-read / code-decided</span>
+        <span class="meta"><a href="https://compliance.hector-garza.com">compliance.hector-garza.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>Checks a production record against a process spec &mdash; the LLM extracts cited requirements, deterministic code makes the numeric/temporal verdicts (a missing field is never &ldquo;compliant&rdquo;), and a human signs every disposition. Django &middot; Claude &middot; pdfplumber. <a href="https://compliance.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/spec-compliance-checker">Code &amp; decision record</a>.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>Capex Decision Engine</strong> &mdash; risk-adjusted allocation under a budget cap</span>
+        <span class="meta"><a href="https://capex.hector-garza.com">capex.hector-garza.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>Scores capital projects on NPV/IRR/payback, Monte-Carlos correlated inputs into an NPV distribution (P(loss), CVaR), and solves for the best funded portfolio under a hard budget cap &mdash; because ranking by a point NPV ignores both the downside tail and that projects compete for one budget with correlated risk (it can still defend the high-ROI project it deliberately <em>cuts</em>). The LLM drafts the memo; it never decides. Django &middot; NumPy/SciPy &middot; Claude &middot; Plotly. <a href="https://capex.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/capex-decision-engine">Code &amp; decision record</a>.</li>
+      </ul>
+    </article>
+  </section>
+</body>
+</html>
