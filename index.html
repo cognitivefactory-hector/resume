@@ -322,10 +322,10 @@
   <section class="summary">
     <h2>Summary</h2>
     <p>
-      Process engineer with 25+ years in aerospace chemical processing &mdash; plating,
-      anodizing, etching, paint, coat stripping &mdash; now building AI-powered
+      Process engineer with 25+ years in aerospace special processes &mdash; plating,
+      anodizing, etching, paint, coat stripping, and composite bonding &amp; cure &mdash; now building AI-powered
       manufacturing intelligence: SPC dashboards, data pipelines, and NCA/RCCA
-      automation. NADCAP / AS9100 fluent; led audits across multiple OEMs. Ships
+      automation. NADCAP (incl. AC7118 composites) / AS9100 fluent; led audits across multiple OEMs. Ships
       internal tools with Claude Code, Codex, and Gemini &mdash; and documents the
       decisions, risks, and trade-offs behind them.
     </p>
@@ -336,7 +336,7 @@
     <p>
       <span class="label">Process &amp; Manufacturing</span> &mdash; Plating &middot;
       Anodizing &middot; Etching &middot; Coat Stripping &middot; Aerospace Paint &middot;
-      Heat Treating &middot; Shot Peening &middot; Composites &middot;
+      Heat Treating &middot; Shot Peening &middot; Composite Layup / Bonding &amp; Cure &middot; Pyrometry &middot;
       NADCAP &middot; AS9100 &middot; QMS &middot; NCA / RCCA &middot; Tank Chemistry &middot;
       New-Process Qualification &middot; Customer Audits
     </p>
@@ -374,6 +374,7 @@
       </div>
       <ul class="bullets">
         <li>Owned plating, anodizing, and aerospace paint processes end-to-end.</li>
+        <li>Bonded prepreg to components and ran oven cure cycles for bonded composite assemblies; performed pyrometry on cure/thermal equipment.</li>
         <li>Led NADCAP, AS9100, and customer audits; maintained certification compliance.</li>
         <li>Stood up new chemical processes from scoping through production qualification.</li>
         <li>Built internal tools for production and quality data collection &mdash; foundation for the AI-driven work that followed.</li>
@@ -387,6 +388,8 @@
       </div>
       <ul class="bullets">
         <li>Analyzed and corrected methods in chemical processing; maintained AS9100, NADCAP, and customer-spec compliance.</li>
+        <li>Hand layup and oven cure of composite skins/panels and detail bonds for harnesses, under NADCAP AC7118 (composites).</li>
+        <li>Audited composite material control, pyrometry, and material storage (out-time / cold storage) for AC7118 and customer-spec compliance.</li>
         <li>Conducted internal audits; supported EHS and Manufacturing Engineering.</li>
       </ul>
     </article>
@@ -400,7 +403,7 @@
         <li>Directed plating, painting, shot peening, blasting, and heat-treat processes for aerospace controls; trained technicians and senior operators.</li>
         <li>Reviewed and approved materials and process call-outs on engineering drawings; selected and qualified process vendors.</li>
         <li>Programmed and troubleshot Fanuc robots, pulsing rectifiers, and PLC systems for automated process equipment; built new recipes and recalibrated controls.</li>
-        <li>Maintained NADCAP and AS9100 compliance; monitored wet-process tank chemistry; ran XRF, microscopy, leak detection, and mechanical testing.</li>
+        <li>Maintained NADCAP and AS9100 compliance; ran pyrometry on thermal-processing equipment; monitored wet-process tank chemistry; ran XRF, microscopy, leak detection, and mechanical testing.</li>
       </ul>
     </article>
 
@@ -410,7 +413,7 @@
         <span class="meta">Orange, CA &middot; 2000 – 2012</span>
       </div>
       <ul class="bullets">
-        <li>Formulated thermoset and photoset polymer composites, adhesives, and methacrylate/acrylate resins; prepared FDA/ISO regulatory documentation.</li>
+        <li>Formulated and compression-molded thermoset and photoset polymer composites, adhesives, and methacrylate/acrylate resins &mdash; cured by light and by heat/pressure; prepared FDA/ISO regulatory documentation.</li>
       </ul>
     </article>
 
@@ -450,7 +453,16 @@
     <h2>Projects</h2>
     <article class="job">
       <div class="role">
-        <span class="title"><strong>PlantGPT</strong> &mdash; agentic production scheduler</span>
+        <span class="title"><strong>Composite Compliance Tracker</strong> &mdash; NADCAP AC7118 readiness from data</span>
+        <span class="meta"><a href="https://composite-compliance-tracker.onrender.com">composite-compliance-tracker.onrender.com</a></span>
+      </div>
+      <ul class="bullets">
+        <li>Audit-readiness tracker for composites (NADCAP AC7118): logs the time-sensitive controls &mdash; prepreg out-time, cure cycles, lot traceability &mdash; and maps each record to the criterion it evidences, so readiness is <em>computed from data, not ticked</em>. A missing or expired record flips a criterion to not-ready. Django &middot; Postgres &middot; Plotly. <a href="https://composite-compliance-tracker.onrender.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/composite-compliance-tracker">Code &amp; decision record</a>.</li>
+      </ul>
+    </article>
+    <article class="job">
+      <div class="role">
+        <span class="title"><strong>PlantGPT</strong> &mdash; CP-SAT production scheduler with a gated AI layer</span>
         <span class="meta"><a href="https://plant.hector-garza.com">plant.hector-garza.com</a></span>
       </div>
       <ul class="bullets">
@@ -468,15 +480,6 @@
     </article>
     <article class="job">
       <div class="role">
-        <span class="title"><strong>Options Lab</strong> &mdash; equities &amp; options strategy studio</span>
-        <span class="meta"><a href="https://options.hector-garza.com">options.hector-garza.com</a></span>
-      </div>
-      <ul class="bullets">
-        <li>Strategy studio with payoff, Greeks, IV surface, and an honest walk-forward + Monte-Carlo backtest (explicit cost model) &mdash; plus a volatility-regime filter that can say <em>sit out</em>: the trade you don't put on. Django &middot; NumPy/SciPy &middot; Plotly. <a href="https://options.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/options-lab">Code &amp; decision record</a>.</li>
-      </ul>
-    </article>
-    <article class="job">
-      <div class="role">
         <span class="title"><strong>RCCA Copilot</strong> &mdash; agentic root-cause &amp; corrective action</span>
         <span class="meta"><a href="https://rcca.hector-garza.com">rcca.hector-garza.com</a></span>
       </div>
@@ -486,7 +489,7 @@
     </article>
     <article class="job">
       <div class="role">
-        <span class="title"><strong>Spec Compliance Checker</strong> &mdash; AC7118-style readiness from records</span>
+        <span class="title"><strong>Conformance Auditor</strong> &mdash; record-vs-spec verdicts, LLM-read / code-decided</span>
         <span class="meta"><a href="https://compliance.hector-garza.com">compliance.hector-garza.com</a></span>
       </div>
       <ul class="bullets">
@@ -495,20 +498,11 @@
     </article>
     <article class="job">
       <div class="role">
-        <span class="title"><strong>Composite Compliance Tracker</strong> &mdash; NADCAP AC7118 readiness from data</span>
-        <span class="meta"><a href="https://composite-compliance-tracker.onrender.com">composite-compliance-tracker.onrender.com</a></span>
-      </div>
-      <ul class="bullets">
-        <li>Audit-readiness tracker for composites (NADCAP AC7118): logs the time-sensitive controls &mdash; prepreg out-time, cure cycles, lot traceability &mdash; and maps each record to the criterion it evidences, so readiness is <em>computed from data, not ticked</em>. A missing or expired record flips a criterion to not-ready. Django &middot; Postgres &middot; Plotly. <a href="https://composite-compliance-tracker.onrender.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/composite-compliance-tracker">Code &amp; decision record</a>.</li>
-      </ul>
-    </article>
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>Capex Decision Engine</strong> &mdash; risk-adjusted capital allocation</span>
+        <span class="title"><strong>Capex Decision Engine</strong> &mdash; risk-adjusted allocation under a budget cap</span>
         <span class="meta"><a href="https://capex.hector-garza.com">capex.hector-garza.com</a></span>
       </div>
       <ul class="bullets">
-        <li>Scores capital projects on NPV/IRR/payback, Monte-Carlos correlated inputs into an NPV distribution (P(loss), CVaR), and picks the risk-adjusted portfolio under a budget cap &mdash; built to defend the high-ROI project it deliberately <em>cuts</em>. The LLM drafts the memo; it never decides. Django &middot; NumPy/SciPy &middot; Claude &middot; Plotly. <a href="https://capex.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/capex-decision-engine">Code &amp; decision record</a>.</li>
+        <li>Scores capital projects on NPV/IRR/payback, Monte-Carlos correlated inputs into an NPV distribution (P(loss), CVaR), and solves for the best funded portfolio under a hard budget cap &mdash; because ranking by a point NPV ignores both the downside tail and that projects compete for one budget with correlated risk (it can still defend the high-ROI project it deliberately <em>cuts</em>). The LLM drafts the memo; it never decides. Django &middot; NumPy/SciPy &middot; Claude &middot; Plotly. <a href="https://capex.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/capex-decision-engine">Code &amp; decision record</a>.</li>
       </ul>
     </article>
   </section>
