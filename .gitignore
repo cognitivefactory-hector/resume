@@ -1,8 +1,11 @@
-# Private master (contains phone number) — not published
+# Private masters (contain phone number) — not published
 resume.html
+resume-process-eng.html
 
 # Generated artifacts
 *.pdf
+# ...except the public process-engineer resume, which IS served on the live site (no phone)
+!Hector-Garza-Process-Engineer.pdf
 .playwright-mcp/
 
 # wrangler files
