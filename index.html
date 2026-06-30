@@ -114,14 +114,6 @@
       color: var(--ink);
     }
 
-    .stack .stack-line {
-      font-family: 'JetBrains Mono', 'Courier New', monospace;
-      font-size: 9.5pt;
-      color: var(--ink);
-      margin: 0;
-      letter-spacing: 0;
-    }
-
     .job { margin-top: 8pt; }
     .job:first-child { margin-top: 4pt; }
 
@@ -180,11 +172,10 @@
       /* print header + summary are redundant with the hero on screen */
       .resume-header, .summary { display: none; }
 
-      /* reorder for the web: hero → experience → competencies → standards → technical skills → applied tooling → education → tools → footer */
+      /* reorder for the web: hero → experience → competencies → standards → technical skills → applied tooling → education → footer */
       .site-nav { order: -1; }  .hero { order: 0; }  .experience { order: 1; }
       .capabilities { order: 2; }  .certs { order: 3; }  .skills { order: 4; }
-      .selected-work { order: 5; }  .education { order: 7; }
-      .stack { order: 8; }  .site-footer { order: 9; }
+      .selected-work { order: 5; }  .education { order: 7; }  .site-footer { order: 9; }
 
       section { margin: 0; }
       section > h2 {
@@ -242,10 +233,9 @@
       .experience ul.bullets { padding-left: 18px; }
       .experience ul.bullets li { font-size: 14.5px; color: #3b362e; margin-bottom: 5px; }
 
-      /* EDUCATION / TOOLS */
+      /* EDUCATION */
       .education p { font-size: 15px; }
       .education p strong { font-family: 'Fraunces', serif; font-weight: 600; }
-      .stack .stack-line { font-size: 12.5px; color: var(--muted); }
 
       /* PROJECTS — numbered editorial list (the showcase) */
       .selected-work { counter-reset: pj; }
@@ -477,14 +467,9 @@
     <p><strong>B.S., Chemistry</strong> &mdash; University of Michigan, 1996</p>
   </section>
 
-  <section class="stack">
-    <h2>Tools &amp; Stack</h2>
-    <p class="stack-line">CAD (SolidWorks &middot; AutoCAD) &middot; SPC &amp; Control Charts &middot; Python / Django &middot; PostgreSQL &middot; Docker &middot; Linux &middot; Git &middot; AI coding assistants (Claude Code, Codex, Gemini)</p>
-  </section>
-
   <section class="selected-work" id="projects" style="break-before: page; page-break-before: always;">
     <h2>Applied Tooling</h2>
-    <p class="tooling-note">Internal tools I built to solve problems on my own lines &mdash; SPC, root-cause, and scheduling &mdash; each with the decision record behind it.</p>
+    <p class="tooling-note">Internal tools I built to solve problems on my own lines &mdash; audit-readiness, SPC, and root-cause &mdash; each with the decision record behind it.</p>
     <article class="job">
       <div class="role">
         <span class="title"><strong>Composite Compliance Tracker</strong> &mdash; NADCAP AC7118 readiness from data</span>
@@ -492,15 +477,6 @@
       </div>
       <ul class="bullets">
         <li>Audit-readiness tracker for composites (NADCAP AC7118): logs the time-sensitive controls &mdash; prepreg out-time, cure cycles, lot traceability &mdash; and maps each record to the criterion it evidences, so readiness is <em>computed from data, not ticked</em>. A missing or expired record flips a criterion to not-ready. Django &middot; Postgres &middot; Plotly. <a href="https://composite-compliance-tracker.onrender.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/composite-compliance-tracker">Code &amp; decision record</a>.</li>
-      </ul>
-    </article>
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>PlantGPT</strong> &mdash; CP-SAT production scheduler with a gated AI layer</span>
-        <span class="meta"><a href="https://plant.hector-garza.com">plant.hector-garza.com</a></span>
-      </div>
-      <ul class="bullets">
-        <li>Conversational plant-ops tool over an OR-Tools (CP-SAT) production scheduler &mdash; ask the floor in plain English; the AI <em>proposes</em> a re-sequence, the solver enforces every hard constraint (operator cert, time-between-operations, capacity), and a human approves (the AI can never commit or produce an infeasible plan). Django &middot; Postgres &middot; OR-Tools &middot; Claude. <a href="https://plant.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/plantgpt">Code &amp; decision record</a>.</li>
       </ul>
     </article>
     <article class="job">
@@ -519,24 +495,6 @@
       </div>
       <ul class="bullets">
         <li>AI agent that drafts a structured 8D / 5-Why root-cause investigation from a nonconformance &mdash; every candidate cause cites retrieved evidence or is flagged <em>insufficient evidence</em>, and nothing reaches a CAPA without engineer sign-off. Django &middot; Postgres &middot; Claude (tool-use). <a href="https://rcca.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/rcca-copilot">Code &amp; decision record</a>.</li>
-      </ul>
-    </article>
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>Conformance Auditor</strong> &mdash; record-vs-spec verdicts, LLM-read / code-decided</span>
-        <span class="meta"><a href="https://compliance.hector-garza.com">compliance.hector-garza.com</a></span>
-      </div>
-      <ul class="bullets">
-        <li>Checks a production record against a process spec &mdash; the LLM extracts cited requirements, deterministic code makes the numeric/temporal verdicts (a missing field is never &ldquo;compliant&rdquo;), and a human signs every disposition. Django &middot; Claude &middot; pdfplumber. <a href="https://compliance.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/spec-compliance-checker">Code &amp; decision record</a>.</li>
-      </ul>
-    </article>
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>Capex Decision Engine</strong> &mdash; risk-adjusted allocation under a budget cap</span>
-        <span class="meta"><a href="https://capex.hector-garza.com">capex.hector-garza.com</a></span>
-      </div>
-      <ul class="bullets">
-        <li>Scores capital projects on NPV/IRR/payback, Monte-Carlos correlated inputs into an NPV distribution (P(loss), CVaR), and solves for the best funded portfolio under a hard budget cap &mdash; because ranking by a point NPV ignores both the downside tail and that projects compete for one budget with correlated risk (it can still defend the high-ROI project it deliberately <em>cuts</em>). The LLM drafts the memo; it never decides. Django &middot; NumPy/SciPy &middot; Claude &middot; Plotly. <a href="https://capex.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/capex-decision-engine">Code &amp; decision record</a>.</li>
       </ul>
     </article>
   </section>
