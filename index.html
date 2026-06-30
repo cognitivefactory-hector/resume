@@ -182,10 +182,10 @@
       /* print header + summary are redundant with the hero on screen */
       .resume-header, .summary { display: none; }
 
-      /* reorder for the web: hero → projects → experience → competencies → standards → technical skills → ventures → education → tools → footer */
-      .site-nav { order: -1; }  .hero { order: 0; }  .selected-work { order: 1; }
-      .experience { order: 2; }  .capabilities { order: 3; }  .certs { order: 4; }
-      .skills { order: 5; }  .ventures { order: 6; }  .education { order: 7; }
+      /* reorder for the web: hero → experience → competencies → standards → technical skills → applied tooling → ventures → education → tools → footer */
+      .site-nav { order: -1; }  .hero { order: 0; }  .experience { order: 1; }
+      .capabilities { order: 2; }  .certs { order: 3; }  .skills { order: 4; }
+      .selected-work { order: 5; }  .ventures { order: 6; }  .education { order: 7; }
       .stack { order: 8; }  .site-footer { order: 9; }
 
       section { margin: 0; }
@@ -254,6 +254,7 @@
       /* PROJECTS — numbered editorial list (the showcase) */
       .selected-work { counter-reset: pj; }
       .selected-work > h2 { font-size: 34px; }
+      .selected-work .tooling-note { font-size: 16px; color: #6b6358; max-width: 64ch; margin: -2px 0 10px; }
       .selected-work .job {
         counter-increment: pj; position: relative; margin: 0;
         padding: 26px 0 26px 78px; border-top: 1px solid var(--rule); break-inside: avoid;
@@ -294,18 +295,18 @@
   <div class="site-nav">
     <span class="brand">Hector Garza</span>
     <nav>
-      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Tooling</a>
       <a href="https://github.com/cognitivefactory-hector">GitHub</a>
       <a class="pdf" href="/Hector-Garza-Process-Engineer.pdf" download>Résumé ↓</a>
     </nav>
   </div>
 
   <header class="hero">
-    <p class="kick">Aerospace Special-Processes Engineer · Building AI for the Factory Floor</p>
+    <p class="kick">Senior Process Engineer · Aerospace Special Processes</p>
     <h1>Hector<br>Ga<em>r</em>za</h1>
     <div class="thesis">
-      <p class="big"><b>20+ years</b> across aerospace special processes — composites, welding, plating, HVOF &amp; thermal-spray coatings, heat treat, shot peening — all NADCAP-audited — now building the AI tooling factories actually need, and documenting the judgment behind every decision.</p>
+      <p class="big"><b>20+ years</b> turning aerospace special processes from failing to capable — chemical processing, coatings, heat treat, composites, welding, and surface enhancement, all NADCAP-audited. I own processes end-to-end and document the judgment behind every decision — and build the SPC and data tooling that keeps the floor measurable.</p>
       <div class="panel">
         <div class="row"><div class="k">Failure rate, redesigned</div><div class="v">67% <small>→ 3%</small></div></div>
         <div class="row"><div class="k">Process capability (Cpk)</div><div class="v">0.12 <small>→ 1.33</small></div></div>
@@ -371,9 +372,9 @@
       Automated Process Equipment (Fanuc Robotics &middot; PLC) &middot; CAD (SolidWorks &middot; AutoCAD)
     </p>
     <p>
-      <span class="label">Data &amp; AI Engineering</span> &mdash; SPC Dashboards &middot; ETL Pipelines &middot;
-      LLM Tooling (Claude Code, Codex, Gemini) &middot; Internal Web Apps &middot; Dashboards &middot;
-      Process Data Unification
+      <span class="label">Manufacturing Data &amp; Tooling</span> &mdash; SPC Dashboards &middot;
+      Control-Limit Automation &middot; ETL &amp; Process-Data Unification &middot;
+      Internal Web Apps &amp; Dashboards &middot; Manufacturing Data Analysis &middot; AI-Assisted RCCA Drafting
     </p>
   </section>
 
@@ -483,8 +484,8 @@
       <span class="title"><strong>Founder</strong> &mdash; SmartXChain &amp; Cognitive Factory</span>
       <span class="meta">2021 – Present</span>
     </div>
-    <p><span class="label">smartxchain.com</span> &mdash; analysis and news on frontier technology in blockchain and AI.</p>
-    <p><span class="label">cognitivefactory.ai</span> &mdash; setting up companies for the cognitive revolution; AI-native operating models for industrial and knowledge work.</p>
+    <p><span class="label">smartxchain.com</span> &mdash; independent analysis on frontier manufacturing and process technology.</p>
+    <p><span class="label">cognitivefactory.ai</span> &mdash; advising industrial and knowledge-work teams on modern data and automation practices.</p>
   </section>
 
   <section class="education">
@@ -494,11 +495,12 @@
 
   <section class="stack">
     <h2>Tools &amp; Stack</h2>
-    <p class="stack-line">Docker &middot; Django &middot; PostgreSQL &middot; Git &middot; Linux &middot; Claude Code &middot; Codex &middot; Gemini &middot; CAD (AutoDesk, SolidWorks)</p>
+    <p class="stack-line">CAD (SolidWorks &middot; AutoCAD) &middot; SPC &amp; Control Charts &middot; Python / Django &middot; PostgreSQL &middot; Docker &middot; Linux &middot; Git &middot; AI coding assistants (Claude Code, Codex, Gemini)</p>
   </section>
 
   <section class="selected-work" id="projects" style="break-before: page; page-break-before: always;">
-    <h2>Projects</h2>
+    <h2>Applied Tooling</h2>
+    <p class="tooling-note">Internal tools I built to solve problems on my own lines &mdash; SPC, root-cause, and scheduling &mdash; each with the decision record behind it.</p>
     <article class="job">
       <div class="role">
         <span class="title"><strong>Composite Compliance Tracker</strong> &mdash; NADCAP AC7118 readiness from data</span>
