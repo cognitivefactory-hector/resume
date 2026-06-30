@@ -104,10 +104,14 @@
     }
 
     .capabilities p,
-    .ventures p { margin: 3pt 0; }
+    .ventures p,
+    .certs p,
+    .skills p { margin: 3pt 0; }
 
     .capabilities .label,
-    .ventures .label {
+    .ventures .label,
+    .certs .label,
+    .skills .label {
       font-weight: 700;
       color: var(--ink);
     }
@@ -178,10 +182,11 @@
       /* print header + summary are redundant with the hero on screen */
       .resume-header, .summary { display: none; }
 
-      /* reorder for the web: hero → projects → experience → capabilities → ventures → education → tools → footer */
+      /* reorder for the web: hero → projects → experience → competencies → standards → technical skills → ventures → education → tools → footer */
       .site-nav { order: -1; }  .hero { order: 0; }  .selected-work { order: 1; }
-      .experience { order: 2; }  .capabilities { order: 3; }  .ventures { order: 4; }
-      .education { order: 5; }  .stack { order: 6; }  .site-footer { order: 9; }
+      .experience { order: 2; }  .capabilities { order: 3; }  .certs { order: 4; }
+      .skills { order: 5; }  .ventures { order: 6; }  .education { order: 7; }
+      .stack { order: 8; }  .site-footer { order: 9; }
 
       section { margin: 0; }
       section > h2 {
@@ -228,9 +233,9 @@
         text-transform: uppercase; font-weight: 700; padding: 15px 26px; text-decoration: none; }
       .hero .dl:hover { background: var(--accent); }
 
-      /* CAPABILITIES */
-      .capabilities p { font-size: 15px; margin: 6px 0; }
-      .capabilities .label { color: var(--accent); font-weight: 700; }
+      /* CAPABILITIES / STANDARDS / TECHNICAL SKILLS */
+      .capabilities p, .certs p, .skills p { font-size: 15px; margin: 6px 0; }
+      .capabilities .label, .certs .label, .skills .label { color: var(--accent); font-weight: 700; }
 
       /* EXPERIENCE */
       .experience .role { margin-top: 18px; }
@@ -300,11 +305,11 @@
     <p class="kick">Aerospace Special-Processes Engineer · Building AI for the Factory Floor</p>
     <h1>Hector<br>Ga<em>r</em>za</h1>
     <div class="thesis">
-      <p class="big"><b>Twenty-five years</b> across aerospace special processes — composites, welding, plating, HVOF &amp; thermal-spray coatings, heat treat, shot peening — all NADCAP-audited — now building the AI tooling factories actually need, and documenting the judgment behind every decision.</p>
+      <p class="big"><b>20+ years</b> across aerospace special processes — composites, welding, plating, HVOF &amp; thermal-spray coatings, heat treat, shot peening — all NADCAP-audited — now building the AI tooling factories actually need, and documenting the judgment behind every decision.</p>
       <div class="panel">
         <div class="row"><div class="k">Failure rate, redesigned</div><div class="v">67% <small>→ 3%</small></div></div>
-        <div class="row"><div class="k">Process capability</div><div class="v">+56%</div></div>
-        <div class="row"><div class="k">Live project demos</div><div class="v">6</div></div>
+        <div class="row"><div class="k">Process capability (Cpk)</div><div class="v">0.12 <small>→ 1.33</small></div></div>
+        <div class="row"><div class="k">FPI first-pass yield</div><div class="v">32% <small>→ 92%</small></div></div>
       </div>
     </div>
     <a class="dl" href="/Hector-Garza-Process-Engineer.pdf" download>Download résumé ↓</a>
@@ -322,25 +327,43 @@
   <section class="summary">
     <h2>Summary</h2>
     <p>
-      Process engineer with 25+ years across aerospace special processes &mdash; chemical
-      processing, heat treating, composites, coatings, welding, and surface enhancement &mdash; now building AI-powered
-      manufacturing intelligence: SPC dashboards, data pipelines, and NCA/RCCA
-      automation. NADCAP (incl. AC7118 composites &amp; AC7110 welding) / AS9100 fluent; led audits across multiple OEMs. Ships
-      internal tools with Claude Code, Codex, and Gemini &mdash; and documents the
-      decisions, risks, and trade-offs behind them.
+      Aerospace special-processes engineer with 20+ years across chemical processing, coatings,
+      heat treating, composites, welding, and surface enhancement. Owns processes end-to-end &mdash;
+      from new-process qualification through SPC-driven production control, NCA / RCCA, and
+      tooling and fixture design &mdash; throughout on ITAR-controlled aerospace programs. NADCAP and
+      AS9100 fluent; led NADCAP, AS9100, and customer audits across multiple OEMs. Partners across
+      Quality, Maintenance, and Production to lead Lean / Six Sigma / Kaizen continuous-improvement
+      initiatives, standardizes work through SOPs and work instructions, monitors KPIs, and ensures
+      safety, environmental, and regulatory compliance. Track record of turning failing lines into
+      capable ones &mdash; most recently cutting a process failure rate from 67% to 3% and driving
+      reworks to near zero.
     </p>
   </section>
 
   <section class="capabilities">
     <h2>Core Capabilities</h2>
     <p>
-      <span class="label">Process &amp; Manufacturing</span> &mdash; Aerospace special
-      processes across NADCAP commodities: Chemical Processing (Plating &middot; Anodizing &middot;
-      Etching &middot; Coat Stripping) &middot; Coatings (Thermal Spray / HVOF) &amp; Aerospace Paint &middot; Heat Treating &middot;
-      Composite Layup / Bonding &amp; Cure &middot; Welding (TIG / MIG / Seam) &middot;
-      Surface Enhancement (Shot Peening) &middot; Pyrometry &middot; First Article Inspection &middot;
-      Materials Testing Laboratory &middot; NADCAP &middot; AS9100 &middot; QMS &middot; NCA / RCCA &middot;
-      Tank Chemistry &middot; New-Process Qualification &middot; Customer Audits
+      <span class="label">Process &amp; Manufacturing</span> &mdash; New-Process Scoping &amp; Production
+      Qualification &middot; New Product Introduction (NPI) &amp; Design for Manufacturability &middot;
+      SPC / Statistical Process Control &middot; Process Capability (Cpk) Improvement &middot;
+      Yield &amp; Cycle-Time Reduction &middot; Tooling &amp; Fixture Design &middot;
+      Traveler / Work-Instruction &amp; Standard-Operating-Procedure (SOP) Development &middot;
+      Engineering Drawing &amp; Blueprint Interpretation &middot;
+      Cross-Functional Collaboration (Quality &middot; Maintenance &middot; Production) &middot;
+      Root-Cause Analysis &amp; Corrective-Action Implementation (NCA / RCCA) &middot; Tank Chemistry &middot;
+      Wastewater Treatment &middot; Pyrometry &middot; First Article Inspection &middot; Customer &amp; NADCAP Audits
+    </p>
+    <p>
+      <span class="label">Continuous Improvement &amp; Quality Tools</span> &mdash; Lean &middot; Six Sigma &middot;
+      Kaizen &middot; 5S &middot; PFMEA / FMEA &middot; DOE (Design of Experiments) &middot; 8D &middot;
+      PPAP / APQP &middot; Control Plans &middot; CAPA
+    </p>
+    <p>
+      <span class="label">Materials &amp; Process</span> &mdash; Material &amp; Process Specification Review
+      and Call-Out &middot; Processing Methods for Metallic / Non-Metallic / Composite Materials &middot;
+      Failure Analysis &amp; Corrective Action &middot; Vendor Selection &amp; Qualification &middot;
+      Materials Test Laboratory (XRF &middot; ICP-OES &middot; Microscopy &middot; Cross-Sectioning for
+      Hardness &amp; Thickness)
     </p>
     <p>
       <span class="label">Design, Tooling &amp; Quality</span> &mdash; Tooling / Fixture / Jig Design &middot;
@@ -348,10 +371,18 @@
       Automated Process Equipment (Fanuc Robotics &middot; PLC) &middot; CAD (SolidWorks &middot; AutoCAD)
     </p>
     <p>
-      <span class="label">Data &amp; AI Engineering</span> &mdash; SPC / Statistical
-      Process Control &middot; ETL Pipelines &middot; LLM Tooling (Claude Code, Codex,
-      Gemini) &middot; Internal Web Apps &middot; Dashboards &middot; Process Data
-      Unification
+      <span class="label">Data &amp; AI Engineering</span> &mdash; SPC Dashboards &middot; ETL Pipelines &middot;
+      LLM Tooling (Claude Code, Codex, Gemini) &middot; Internal Web Apps &middot; Dashboards &middot;
+      Process Data Unification
+    </p>
+  </section>
+
+  <section class="certs">
+    <h2>Standards &amp; Compliance</h2>
+    <p>
+      NADCAP &middot; AS9100D &middot; AS9110 &middot; First Article Inspection (AS9102) &middot; AMS2750 (Pyrometry) &middot;
+      QMS &middot; FAA Advisory Circulars &middot; ITAR &middot; Safety / Environmental / Regulatory Compliance (EHS, EPA / RCRA wastewater) &middot;
+      led NADCAP, AS9100, and customer audits across multiple OEMs
     </p>
   </section>
 
@@ -364,13 +395,11 @@
         <span class="meta">Greensboro, NC &middot; 2024 – Present</span>
       </div>
       <ul class="bullets">
-        <li>Own plating, anodizing, etching, and coat-stripping processes; drive NCA and RCCA across production and quality.</li>
-        <li>Reduced process failure rate from 67% to 3% and drove reworks to near zero through workflow redesign and tighter process control.</li>
-        <li>Improved process capability by 56% via workflow standardization and SPC-driven control.</li>
-        <li>Built SPC dashboards with automated control-limit calculation and alerting on tank chemistry, deposition thickness, and etch rate.</li>
-        <li>Designed data pipelines unifying production and quality data from machines, spreadsheets, and quality records.</li>
-        <li>Developed AI-assisted NCA/RCCA tooling that drafts root-cause narratives and corrective actions from process data.</li>
-        <li>Ship internal applications and CLI tools for engineers and operators, built using Claude Code, Codex, and Gemini.</li>
+        <li>Manage 7 special-process lines &mdash; chrome plating; chromic / Type II anodize and anodize strip; nickel plate / strip / passivation; chromate conversion coating / etch; cadmium plate / strip; temper etch / descale; and solvent / alkaline clean.</li>
+        <li>Reduced process failure rate from 67% to 3% within 3 months and raised process capability (Cpk) from 0.12 to above 1.33 through workflow redesign, standardization, and SPC-driven control, driving reworks to near zero.</li>
+        <li>Raised NDT fluorescent-penetrant-inspection (FPI) first-pass yield from 32% to 92% and cut a machine-grinding operation from 16 hours to 2 hours.</li>
+        <li>Lead 5&ndash;12 NCA / RCCA (8D / 5-Why) investigations per month to closure and corrective-action implementation, working cross-functionally with Quality, Maintenance, and Production.</li>
+        <li>Built SPC dashboards with automated control-limit calculation and daily / weekly / monthly KPI tracking on tank chemistry, deposition thickness, and etch rate; unified production and quality data from machines, spreadsheets, and quality records.</li>
       </ul>
     </article>
 
@@ -380,26 +409,25 @@
         <span class="meta">Whitsett, NC &middot; 2019 – 2024</span>
       </div>
       <ul class="bullets">
-        <li>Owned plating, anodizing, aerospace paint, and thermal-spray / HVOF coating processes end-to-end.</li>
-        <li>Bonded prepreg to components and ran oven cure cycles for bonded composite assemblies; performed pyrometry on cure/thermal equipment.</li>
-        <li>Led NADCAP, AS9100, and customer audits; maintained certification compliance.</li>
-        <li>Stood up new chemical processes from scoping through production qualification.</li>
-        <li>Designed process tooling, fixtures, jigs, racking, and masking for the lines; applied GD&amp;T and metrology to verify conformance, with DFM / DFA producibility input on new-process introductions.</li>
-        <li>Built internal tools for production and quality data collection &mdash; foundation for the AI-driven work that followed.</li>
+        <li>Owned 4 special-process lines end-to-end &mdash; cadmium plate / strip, aerospace paint / strip, passivation, and anodize (Type I/IB, II, III) with chromate conversion coating (Type I / II) &mdash; plus composite bonding and pyrometry.</li>
+        <li>Raised line yield from 62% to 88% through workflow and process-control improvements.</li>
+        <li>Led new product / process introduction (NPI) &mdash; qualified and certified 3 new processes from scoping through production launch &mdash; titanium anodize, cadmium plate, and dry-film lubricant (fluorinated polymer) &mdash; to specification and NADCAP, using PFMEA and DOE to dial in the processes and ensure manufacturability.</li>
+        <li>Led and passed 3 NADCAP and 2 AS9100 audits; maintained certification compliance across customer specs.</li>
+        <li>Performed prepreg layup and oven cure for bonded composite assemblies; ran pyrometry on cure / thermal equipment.</li>
+        <li>Designed process tooling, fixtures, jigs, racking, and masking; applied GD&amp;T and metrology to verify conformance, with DFM / DFA producibility input on new-process introductions.</li>
       </ul>
     </article>
 
     <article class="job">
       <div class="role">
         <span class="title"><strong>Senior SSP Aerospace</strong> &mdash; Quality Assurance Specialist</span>
-        <span class="meta">Burbank, CA &middot; 2018 – Oct 2019</span>
+        <span class="meta">Burbank, CA &middot; 2018 – 2019</span>
       </div>
       <ul class="bullets">
-        <li>Analyzed and corrected methods in chemical processing; maintained AS9100, NADCAP, and customer-spec compliance.</li>
-        <li>Hand layup and oven cure of composite skins/panels and detail bonds for harnesses, under NADCAP AC7118 (composites).</li>
+        <li>Analyzed and corrected methods in chemical processing; supported and passed NADCAP welding, chemical-processing, and heat-treat audits and AS9100 / customer-spec compliance.</li>
+        <li>Performed hand layup and oven cure of composite skins / panels and detail bonds for harnesses, under NADCAP AC7118 (composites).</li>
         <li>Audited composite material control, pyrometry, and material storage (out-time / cold storage) for AC7118 and customer-spec compliance.</li>
         <li>Welded and audited TIG, MIG, and seam welding to NADCAP AC7110 (incl. /4, /5, /12) and customer specs.</li>
-        <li>Operated and audited thermal-spray and HVOF coating processes to AS9100 / customer specs.</li>
         <li>Conducted internal audits; supported EHS and Manufacturing Engineering.</li>
       </ul>
     </article>
@@ -410,10 +438,10 @@
         <span class="meta">Torrance, CA &middot; 2012 – 2018</span>
       </div>
       <ul class="bullets">
-        <li>Directed plating, painting, shot peening, blasting, and heat-treat processes for aerospace controls; trained technicians and senior operators.</li>
-        <li>Reviewed and approved materials and process call-outs on engineering drawings; selected and qualified process vendors.</li>
-        <li>Programmed and troubleshot Fanuc robots, pulsing rectifiers, and PLC systems for automated process equipment; built new recipes and recalibrated controls.</li>
-        <li>Maintained NADCAP and AS9100 compliance; ran pyrometry on thermal-processing equipment; monitored wet-process tank chemistry; ran XRF, microscopy, leak detection, and mechanical testing.</li>
+        <li>Directed plating, painting, shot peening, blasting, and heat-treat processes for aerospace controls; trained 25&ndash;35 technicians and senior operators.</li>
+        <li>Reviewed and approved materials and process call-outs on engineering drawings; selected and qualified 18 process vendors (test labs, alloy and service providers, technical support) per AS9100.</li>
+        <li>Started up and qualified robotic shot peening, brush plating, and zinc-nickel plating to NADCAP and customer approval; programmed and troubleshot Fanuc robots, pulsing rectifiers, and PLC systems.</li>
+        <li>Maintained NADCAP and AS9100 compliance; ran pyrometry on thermal-processing equipment, wet-process tank chemistry, XRF, microscopy, leak detection, and mechanical testing.</li>
       </ul>
     </article>
 
@@ -423,21 +451,30 @@
         <span class="meta">Orange, CA &middot; 2000 – 2012</span>
       </div>
       <ul class="bullets">
-        <li>Formulated and compression-molded thermoset and photoset polymer composites, adhesives, and methacrylate/acrylate resins &mdash; cured by light and by heat/pressure; prepared FDA/ISO regulatory documentation.</li>
+        <li>Formulated and compression-molded thermoset and photoset polymer composites, adhesives, and methacrylate / acrylate resins &mdash; cured by light and by heat / pressure; prepared FDA / ISO regulatory documentation.</li>
       </ul>
     </article>
 
     <article class="job">
       <div class="role">
-        <span class="title"><strong>Chromalloy (Contract)</strong> &mdash; Quality Assurance</span>
+        <span class="title"><strong>McCurdy Circuits &amp; Chromalloy</strong> &mdash; Process Engineering &amp; Metallurgical Lab QA</span>
         <span class="meta">California &middot; 1996 – 2000</span>
       </div>
       <ul class="bullets">
-        <li>Ran and inspected thermal-spray and HVOF coating processes on aerospace components.</li>
-        <li>Ran lot-acceptance and first-article testing for aerospace and printed-circuit-board production; monitored chemical processes in metal refining and waste treatment.</li>
-        <li>Performed analytical and metallurgical testing &mdash; ICP-OES, AA, GC, FT-IR, and cross-sections for hardness and thickness.</li>
+        <li>PCB process engineering (plating-bath chemistry, copper-plate / etch / lamination, first-article testing) and metallurgical-lab QA (ICP-OES, AA, GC, FT-IR, microsectioning / cross-sections); operated PVD and plasma (thermal-spray) coating chemical processes on aerospace components.</li>
       </ul>
     </article>
+  </section>
+
+  <section class="skills">
+    <h2>Technical Skills</h2>
+    <p>
+      SPC / Statistical Process Control &middot; Control-Limit Calculation &middot; GD&amp;T &middot;
+      Metrology &middot; CAD (SolidWorks, AutoCAD) &middot; Fanuc Robotics &middot; PLC &middot;
+      Tank Chemistry &middot; XRF &middot; ICP-OES &middot; Microscopy &middot; Cross-Sectioning &middot;
+      ERP / MRP Systems &middot; Manufacturing Data Analysis &middot; Engineering Drawings / Blueprints &middot;
+      Process Data Pipelines &amp; Dashboards
+    </p>
   </section>
 
   <section class="ventures">
