@@ -3,511 +3,261 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hector Garza — Resume</title>
+  <title>Hector Garza — Senior Process Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --accent: #2C5F7C;
-      --ink: #1A1A1A;
-      --muted: #666;
-      --rule: #C9D4DC;
-      --paper: #F6F2EA;
-      --rust: #B4521E;
+    :root{
+      --ink:#16202B; --muted:#5B6770; --accent:#2C5F7C; --accent-d:#22506b;
+      --rule:#DDE3E8; --bg:#FFFFFF; --panel:#F7F9FB; --body:#2B3640;
+    }
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+      font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    /* slim sticky top bar */
+    .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,0.93);
+      backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);}
+    .topbar .inner{max-width:880px;margin:0 auto;padding:12px 40px;
+      display:flex;justify-content:space-between;align-items:center;gap:14px;}
+    .topbar .nm{font-weight:700;font-size:15px;letter-spacing:-0.1px;}
+    .topbar nav a{color:var(--ink);margin-left:22px;font-size:12px;font-weight:600;
+      letter-spacing:1px;text-transform:uppercase;}
+    .topbar nav a:hover{color:var(--accent);text-decoration:none;}
+    .topbar nav a.btn{border:1px solid var(--accent);color:var(--accent);padding:6px 12px;border-radius:3px;}
+    .topbar nav a.btn:hover{background:var(--accent);color:#fff;}
+
+    .wrap{max-width:880px;margin:0 auto;padding:0 40px 64px;}
+
+    /* identity header */
+    header.id{padding:34px 0 24px;border-bottom:2px solid var(--ink);}
+    header.id h1{font-size:38px;font-weight:700;letter-spacing:-0.8px;margin:0 0 5px;}
+    header.id .role{font-size:14px;font-weight:600;letter-spacing:0.6px;color:var(--accent);
+      text-transform:uppercase;margin:0 0 10px;}
+    header.id .contact{font-size:13.5px;color:var(--muted);margin:0 0 16px;}
+    header.id .contact a{color:var(--muted);}
+    header.id .summary{font-size:15.5px;line-height:1.55;max-width:66ch;margin:0 0 20px;color:#27323C;}
+    header.id .summary b{font-weight:600;color:var(--ink);}
+
+    .stats{display:flex;border:1px solid var(--rule);border-radius:5px;overflow:hidden;max-width:580px;}
+    .stats .s{flex:1;padding:11px 16px;background:var(--panel);}
+    .stats .s + .s{border-left:1px solid var(--rule);}
+    .stats .s .k{font-size:10.5px;letter-spacing:0.8px;text-transform:uppercase;color:var(--muted);font-weight:600;line-height:1.3;}
+    .stats .s .v{font-size:17px;font-weight:700;margin-top:3px;letter-spacing:-0.3px;}
+    .stats .s .v small{color:var(--accent);font-weight:700;font-size:17px;}
+
+    .dl{display:inline-block;margin-top:20px;background:var(--accent);color:#fff;font-size:13px;
+      font-weight:600;letter-spacing:0.4px;padding:11px 20px;border-radius:4px;}
+    .dl:hover{background:var(--accent-d);text-decoration:none;}
+
+    /* sections */
+    section{margin-top:30px;}
+    section > h2{font-size:12.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+      color:var(--accent);margin:0 0 13px;padding-bottom:6px;border-bottom:1px solid var(--rule);}
+
+    /* experience + projects share the entry layout */
+    .job,.proj{margin-bottom:17px;}
+    .job:last-child,.proj:last-child{margin-bottom:4px;}
+    .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;}
+    .row .t{font-size:15px;}
+    .row .t strong{font-weight:700;}
+    .row .t .ti{color:var(--muted);}
+    .row .m{font-size:12.5px;color:var(--muted);white-space:nowrap;letter-spacing:0.2px;}
+    .row .m a{color:var(--accent);}
+    ul.b{margin:6px 0 0;padding-left:18px;}
+    ul.b li{margin-bottom:4px;color:var(--body);font-size:14px;line-height:1.46;}
+    ul.b li em{font-style:italic;color:var(--ink);}
+
+    /* capabilities / standards / skills text blocks */
+    .caps p{margin:5px 0;font-size:14px;color:var(--body);line-height:1.5;}
+    .caps .label{font-weight:700;color:var(--accent);}
+    .oneline p{margin:0;font-size:14px;color:var(--body);line-height:1.55;}
+
+    /* applied tooling */
+    .tooling-note{font-size:14px;color:var(--muted);margin:-3px 0 14px;max-width:70ch;}
+    .proj .pd{margin:5px 0 0;font-size:14px;color:var(--body);line-height:1.5;}
+    .proj .pd a{color:var(--accent);}
+
+    .edu p{margin:0;font-size:15px;}
+    .edu p strong{font-weight:700;}
+
+    /* footer */
+    footer.site{margin-top:40px;padding-top:18px;border-top:1px solid var(--rule);
+      display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;
+      font-size:13px;color:var(--muted);}
+    footer.site .nm{font-weight:700;color:var(--ink);font-size:14px;}
+    footer.site a{color:var(--muted);margin-left:16px;}
+
+    @media (max-width:640px){
+      .topbar .inner,.wrap{padding-left:22px;padding-right:22px;}
+      .topbar nav a:not(.btn){display:none;}
+      .topbar nav a.btn{margin-left:0;}
+      header.id h1{font-size:30px;}
+      .stats{flex-direction:column;}
+      .stats .s + .s{border-left:0;border-top:1px solid var(--rule);}
+      .row{flex-direction:column;gap:2px;}
+      .row .m{white-space:normal;}
     }
 
-    * { box-sizing: border-box; }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: var(--ink);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 10.5pt;
-      line-height: 1.45;
-    }
-
-    body {
-      max-width: 7.5in;
-      margin: 0.55in auto;
-      padding: 0;
-    }
-
-    .resume-header {
-      margin-bottom: 14pt;
-    }
-
-    .resume-header h1 {
-      font-size: 26pt;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin: 0 0 4pt 0;
-      color: var(--ink);
-    }
-
-    .resume-header .contact {
-      font-size: 10pt;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .resume-header .contact a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .resume-header .contact a:hover { text-decoration: underline; }
-
-    .selected-work a { color: var(--accent); text-decoration: none; }
-    .selected-work a:hover { text-decoration: underline; }
-    .selected-work .role .meta a { color: var(--muted); }
-
-    section { margin-top: 14pt; }
-
-    section > h2 {
-      font-size: 10.5pt;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: var(--accent);
-      margin: 0 0 6pt 0;
-      padding-bottom: 3pt;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .role {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-top: 8pt;
-      margin-bottom: 3pt;
-      font-size: 10.5pt;
-    }
-
-    .role .title strong { font-weight: 700; }
-    .role .meta {
-      color: var(--muted);
-      font-size: 9.5pt;
-      white-space: nowrap;
-    }
-
-    ul.bullets {
-      margin: 2pt 0 0 0;
-      padding-left: 14pt;
-    }
-
-    ul.bullets li {
-      margin-bottom: 2pt;
-    }
-
-    .capabilities p,
-    .certs p,
-    .skills p { margin: 3pt 0; }
-
-    .capabilities .label,
-    .certs .label,
-    .skills .label {
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .job { margin-top: 8pt; }
-    .job:first-child { margin-top: 4pt; }
-
-    @page {
-      size: Letter;
-      margin: 0.55in;
-    }
-
-    @media print {
-      html, body {
-        background: #fff;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      body {
-        margin: 0;
-        max-width: none;
-      }
-
-      .role {
-        break-after: avoid;
-        page-break-after: avoid;
-      }
-
-      /* Projects render on their own final page */
-      .selected-work {
-        break-before: page;
-        page-break-before: always;
-      }
-
-      section > h2 {
-        break-after: avoid;
-        page-break-after: avoid;
-      }
-
-      a { color: inherit; text-decoration: none; }
-
-      /* screen-only chrome never prints */
-      .site-nav, .hero, .site-footer { display: none !important; }
-    }
-
-    /* ============================================================
-       SCREEN — editorial site (print is untouched by all of this)
-       ============================================================ */
-    @media screen {
-      html { background: var(--paper); }
-      body {
-        max-width: 1080px; margin: 0 auto; padding: 0 40px 70px;
-        background: var(--paper); color: var(--ink);
-        font-family: 'Archivo', sans-serif; font-size: 16px; line-height: 1.6;
-        background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.045) 1px, transparent 0);
-        background-size: 26px 26px;
-        display: flex; flex-direction: column;
-      }
-      /* print header + summary are redundant with the hero on screen */
-      .resume-header, .summary { display: none; }
-
-      /* reorder for the web: hero → experience → competencies → standards → technical skills → applied tooling → education → footer */
-      .site-nav { order: -1; }  .hero { order: 0; }  .experience { order: 1; }
-      .capabilities { order: 2; }  .certs { order: 3; }  .skills { order: 4; }
-      .selected-work { order: 5; }  .education { order: 7; }  .site-footer { order: 9; }
-
-      section { margin: 0; }
-      section > h2 {
-        font-family: 'Fraunces', serif; font-weight: 600; font-size: 30px;
-        text-transform: none; letter-spacing: -0.4px; color: var(--ink);
-        border: 0; border-top: 2px solid var(--ink); padding: 16px 0 0;
-        margin: 50px 0 18px;
-      }
-
-      /* NAV */
-      .site-nav {
-        position: sticky; top: 0; z-index: 30;
-        display: flex; justify-content: space-between; align-items: baseline;
-        padding: 18px 0 16px; border-bottom: 1.5px solid var(--ink);
-        background: linear-gradient(var(--paper), var(--paper) 65%, rgba(246,242,234,0.85));
-        backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-      }
-      .site-nav .brand { font-family: 'Fraunces', serif; font-weight: 600; font-size: 19px; letter-spacing: -0.3px; }
-      .site-nav nav a { color: var(--ink); text-decoration: none; margin-left: 24px;
-        font-size: 11.5px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 600; }
-      .site-nav nav a:hover { color: var(--rust); }
-      .site-nav nav a.pdf { border: 1.5px solid var(--ink); padding: 7px 14px; }
-      .site-nav nav a.pdf:hover { background: var(--ink); color: var(--paper); }
-
-      /* HERO */
-      .hero { padding: 52px 0 26px; }
-      .hero .kick { display: flex; align-items: center; gap: 14px; font-size: 12px;
-        letter-spacing: 3px; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 24px; }
-      .hero .kick::before { content: ""; width: 48px; height: 2px; background: var(--accent); }
-      .hero h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(58px, 9.5vw, 150px);
-        line-height: 0.85; letter-spacing: -3px; margin: 0; }
-      .hero h1 em { font-style: italic; font-weight: 500; color: var(--accent); }
-      .hero .thesis { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 46px; margin-top: 40px; align-items: end; }
-      .hero .big { font-family: 'Fraunces', serif; font-weight: 400; font-size: 26px; line-height: 1.34; letter-spacing: -0.3px; }
-      .hero .big b { font-weight: 600; }
-      .hero .panel { border-left: 2px solid var(--ink); padding-left: 20px; }
-      .hero .panel .row { margin-bottom: 14px; }
-      .hero .panel .row:last-child { margin-bottom: 0; }
-      .hero .panel .k { font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 700; }
-      .hero .panel .v { font-family: 'Fraunces', serif; font-size: 21px; font-weight: 600; margin-top: 2px; }
-      .hero .panel .v small { color: var(--rust); font-size: 16px; }
-      .hero .dl { display: inline-flex; align-items: center; gap: 10px; margin-top: 32px;
-        background: var(--ink); color: var(--paper); font-size: 12.5px; letter-spacing: 1.5px;
-        text-transform: uppercase; font-weight: 700; padding: 15px 26px; text-decoration: none; }
-      .hero .dl:hover { background: var(--accent); }
-
-      /* CAPABILITIES / STANDARDS / TECHNICAL SKILLS */
-      .capabilities p, .certs p, .skills p { font-size: 15px; margin: 6px 0; }
-      .capabilities .label, .certs .label, .skills .label { color: var(--accent); font-weight: 700; }
-
-      /* EXPERIENCE */
-      .experience .role { margin-top: 18px; }
-      .experience .role .title strong { font-family: 'Fraunces', serif; font-weight: 600; font-size: 19px; }
-      .experience .role .meta { font-size: 11.5px; letter-spacing: 0.5px; color: var(--muted); text-transform: uppercase; }
-      .experience ul.bullets { padding-left: 18px; }
-      .experience ul.bullets li { font-size: 14.5px; color: #3b362e; margin-bottom: 5px; }
-
-      /* EDUCATION */
-      .education p { font-size: 15px; }
-      .education p strong { font-family: 'Fraunces', serif; font-weight: 600; }
-
-      /* PROJECTS — numbered editorial list (the showcase) */
-      .selected-work { counter-reset: pj; }
-      .selected-work > h2 { font-size: 34px; }
-      .selected-work .tooling-note { font-size: 16px; color: #6b6358; max-width: 64ch; margin: -2px 0 10px; }
-      .selected-work .job {
-        counter-increment: pj; position: relative; margin: 0;
-        padding: 26px 0 26px 78px; border-top: 1px solid var(--rule); break-inside: avoid;
-      }
-      .selected-work .job::before {
-        content: counter(pj, decimal-leading-zero); position: absolute; left: 0; top: 24px;
-        font-family: 'Fraunces', serif; font-weight: 900; font-size: 40px; line-height: 1; color: var(--accent);
-      }
-      .selected-work .role { margin: 0 0 6px; }
-      .selected-work .role .title strong { font-family: 'Fraunces', serif; font-weight: 600; font-size: 23px; }
-      .selected-work .role .meta { font-family: 'Archivo', sans-serif; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
-      .selected-work .role .meta a { color: var(--accent); font-weight: 600; }
-      .selected-work ul.bullets { padding-left: 0; list-style: none; }
-      .selected-work ul.bullets li { font-size: 15px; color: #3b362e; }
-      .selected-work .job:hover .role .title strong { color: var(--rust); }
-
-      a { color: var(--accent); }
-
-      /* FOOTER */
-      .site-footer { margin-top: 56px; border-top: 2px solid var(--ink); padding-top: 22px;
-        display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 14px;
-        font-size: 13px; color: var(--muted); }
-      .site-footer .nm { font-family: 'Fraunces', serif; font-size: 17px; color: var(--ink); }
-      .site-footer a { color: var(--ink); text-decoration: none; margin-left: 18px; }
-      .site-footer a:hover { color: var(--rust); }
-
-      @media (max-width: 720px) {
-        body { padding: 0 22px 50px; }
-        .hero .thesis { grid-template-columns: 1fr; gap: 26px; }
-        .hero .panel { border-left: 0; border-top: 2px solid var(--ink); padding: 16px 0 0; }
-        .selected-work .job { padding-left: 0; padding-top: 52px; }
-        .selected-work .job::before { top: 18px; font-size: 32px; }
-      }
+    @page{size:Letter;margin:0.5in;}
+    @media print{
+      .topbar,.dl,footer.site{display:none !important;}
+      html,body{background:#fff;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+      .wrap{max-width:none;padding:0;}
+      header.id{padding-top:0;}
+      a{color:#000;text-decoration:none;}
+      section{margin-top:14pt;}
+      .job,.proj{break-inside:avoid;}
+      section > h2{break-after:avoid;}
+      .selected-work{break-before:page;}
     }
   </style>
 </head>
 <body>
-  <div class="site-nav">
-    <span class="brand">Hector Garza</span>
+  <div class="topbar"><div class="inner">
+    <span class="nm">Hector Garza</span>
     <nav>
       <a href="#experience">Experience</a>
       <a href="#projects">Tooling</a>
       <a href="https://github.com/cognitivefactory-hector">GitHub</a>
-      <a class="pdf" href="/Hector-Garza-Process-Engineer.pdf" download>Résumé ↓</a>
+      <a class="btn" href="/Hector-Garza-Process-Engineer.pdf" download>Résumé ↓</a>
     </nav>
+  </div></div>
+
+  <div class="wrap">
+    <header class="id">
+      <h1>Hector Garza</h1>
+      <p class="role">Senior Process Engineer · Aerospace Special Processes</p>
+      <p class="contact">Greensboro, NC &nbsp;·&nbsp; <a href="mailto:hgg@hector-garza.com">hgg@hector-garza.com</a> &nbsp;·&nbsp; <a href="https://github.com/cognitivefactory-hector">GitHub</a></p>
+      <p class="summary"><b>20+ years</b> turning aerospace special processes from failing to capable &mdash; chemical processing, coatings, heat treat, composites, welding, and surface enhancement, all NADCAP-audited. I own processes end-to-end and document the judgment behind every decision &mdash; and build the SPC and data tooling that keeps the floor measurable.</p>
+      <div class="stats">
+        <div class="s"><div class="k">Failure rate, redesigned</div><div class="v">67% <small>&rarr; 3%</small></div></div>
+        <div class="s"><div class="k">Process capability (Cpk)</div><div class="v">0.12 <small>&rarr; 1.33</small></div></div>
+        <div class="s"><div class="k">FPI first-pass yield</div><div class="v">32% <small>&rarr; 92%</small></div></div>
+      </div>
+      <a class="dl" href="/Hector-Garza-Process-Engineer.pdf" download>Download résumé &darr;</a>
+    </header>
+
+    <section id="experience">
+      <h2>Professional Experience</h2>
+
+      <article class="job">
+        <div class="row"><span class="t"><strong>TAT Technologies</strong> <span class="ti">&mdash; Process Engineer</span></span><span class="m">Greensboro, NC &middot; 2024 – Present</span></div>
+        <ul class="b">
+          <li>Manage 7 special-process lines &mdash; chrome plating; chromic / Type II anodize and anodize strip; nickel plate / strip / passivation; chromate conversion coating / etch; cadmium plate / strip; temper etch / descale; and solvent / alkaline clean.</li>
+          <li>Reduced process failure rate from 67% to 3% within 3 months and raised process capability (Cpk) from 0.12 to above 1.33 through workflow redesign, standardization, and SPC-driven control, driving reworks to near zero.</li>
+          <li>Raised NDT fluorescent-penetrant-inspection (FPI) first-pass yield from 32% to 92% and cut a machine-grinding operation from 16 hours to 2 hours.</li>
+          <li>Lead 5&ndash;12 NCA / RCCA (8D / 5-Why) investigations per month to closure and corrective-action implementation, working cross-functionally with Quality, Maintenance, and Production.</li>
+          <li>Built SPC dashboards with automated control-limit calculation and daily / weekly / monthly KPI tracking on tank chemistry, deposition thickness, and etch rate; unified production and quality data from machines, spreadsheets, and quality records.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><span class="t"><strong>Machine Specialties Inc.</strong> <span class="ti">&mdash; Process Engineer</span></span><span class="m">Whitsett, NC &middot; 2019 – 2024</span></div>
+        <ul class="b">
+          <li>Owned 4 special-process lines end-to-end &mdash; cadmium plate / strip, aerospace paint / strip, passivation, and anodize (Type I/IB, II, III) with chromate conversion coating (Type I / II) &mdash; plus composite bonding and pyrometry.</li>
+          <li>Raised line yield from 62% to 88% through workflow and process-control improvements.</li>
+          <li>Led new product / process introduction (NPI) &mdash; qualified and certified 3 new processes from scoping through production launch &mdash; titanium anodize, cadmium plate, and dry-film lubricant (fluorinated polymer) &mdash; to specification and NADCAP, using PFMEA and DOE to dial in the processes and ensure manufacturability.</li>
+          <li>Led and passed 3 NADCAP and 2 AS9100 audits; maintained certification compliance across customer specs.</li>
+          <li>Performed prepreg layup and oven cure for bonded composite assemblies; ran pyrometry on cure / thermal equipment.</li>
+          <li>Designed process tooling, fixtures, jigs, racking, and masking; applied GD&amp;T and metrology to verify conformance, with DFM / DFA producibility input on new-process introductions.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><span class="t"><strong>Senior SSP Aerospace</strong> <span class="ti">&mdash; Quality Assurance Specialist</span></span><span class="m">Burbank, CA &middot; 2018 – 2019</span></div>
+        <ul class="b">
+          <li>Analyzed and corrected methods in chemical processing; supported and passed NADCAP welding, chemical-processing, and heat-treat audits and AS9100 / customer-spec compliance.</li>
+          <li>Performed hand layup and oven cure of composite skins / panels and detail bonds for harnesses, under NADCAP AC7118 (composites).</li>
+          <li>Audited composite material control, pyrometry, and material storage (out-time / cold storage) for AC7118 and customer-spec compliance.</li>
+          <li>Welded and audited TIG, MIG, and seam welding to NADCAP AC7110 (incl. /4, /5, /12) and customer specs.</li>
+          <li>Conducted internal audits; supported EHS and Manufacturing Engineering.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><span class="t"><strong>Moog Inc.</strong> <span class="ti">&mdash; Materials &amp; Process Chemist</span></span><span class="m">Torrance, CA &middot; 2012 – 2018</span></div>
+        <ul class="b">
+          <li>Directed plating, painting, shot peening, blasting, and heat-treat processes for aerospace controls; trained 25&ndash;35 technicians and senior operators.</li>
+          <li>Reviewed and approved materials and process call-outs on engineering drawings; selected and qualified 18 process vendors (test labs, alloy and service providers, technical support) per AS9100.</li>
+          <li>Started up and qualified robotic shot peening, brush plating, and zinc-nickel plating to NADCAP and customer approval; programmed and troubleshot Fanuc robots, pulsing rectifiers, and PLC systems.</li>
+          <li>Maintained NADCAP and AS9100 compliance; ran pyrometry on thermal-processing equipment, wet-process tank chemistry, XRF, microscopy, leak detection, and mechanical testing.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><span class="t"><strong>Danaher</strong> <span class="ti">&mdash; Materials R&amp;D · Lab Technician to Research Associate</span></span><span class="m">Orange, CA &middot; 2000 – 2012</span></div>
+        <ul class="b">
+          <li>Formulated thermoset and UV-curing (photoset) polymer composites and tuned them for target mechanical properties; carried formulations from lab through pilot to production &mdash; the materials- and process-development work behind new product introductions.</li>
+          <li>Technical prototyping lead &mdash; designed and built custom equipment for compounding composite formulations (Allen-Bradley PLC control) and the fixtures and instrumentation for mechanical testing of the finished composites, defining success metrics and expected behavior before each build.</li>
+          <li>Ran data-driven DOE studies characterizing end-product composites to ASTM and ISO methods &mdash; viscosity / dispersion, fatigue, environmental / chemical degradation, and wear &mdash; with microcontroller-based data-acquisition rigs (load cells, pressure and flow transducers) for synchronized multi-channel capture.</li>
+          <li>Built Python and Excel analysis tools that let engineers and interns run experiments and report results independently; presented validation-backed recommendations to leadership to gate which concepts advanced, and kept procedures and design data in sync with USC researchers and across multiple Southern California sites.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="row"><span class="t"><strong>McCurdy Circuits &amp; Chromalloy</strong> <span class="ti">&mdash; Process Engineering &amp; Metallurgical Lab QA</span></span><span class="m">California &middot; 1996 – 2000</span></div>
+        <ul class="b">
+          <li>PCB process engineering (plating-bath chemistry, copper-plate / etch / lamination, first-article testing) and metallurgical-lab QA (ICP-OES, AA, GC, FT-IR, microsectioning / cross-sections); operated PVD and plasma (thermal-spray) coating chemical processes on aerospace components.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="caps">
+      <h2>Core Capabilities</h2>
+      <p><span class="label">Process &amp; Manufacturing</span> &mdash; New-Process Scoping &amp; Production Qualification &middot; New Product Introduction (NPI) &amp; Design for Manufacturability &middot; SPC / Statistical Process Control &middot; Process Capability (Cpk) Improvement &middot; Yield &amp; Cycle-Time Reduction &middot; Tooling &amp; Fixture Design &middot; Traveler / Work-Instruction &amp; Standard-Operating-Procedure (SOP) Development &middot; Engineering Drawing &amp; Blueprint Interpretation &middot; Cross-Functional Collaboration (Quality &middot; Maintenance &middot; Production) &middot; Root-Cause Analysis &amp; Corrective-Action Implementation (NCA / RCCA) &middot; Tank Chemistry &middot; Wastewater Treatment &middot; Pyrometry &middot; First Article Inspection &middot; Customer &amp; NADCAP Audits</p>
+      <p><span class="label">Continuous Improvement &amp; Quality Tools</span> &mdash; Lean &middot; Six Sigma &middot; Kaizen &middot; 5S &middot; PFMEA / FMEA &middot; DOE (Design of Experiments) &middot; 8D &middot; PPAP / APQP &middot; Control Plans &middot; CAPA</p>
+      <p><span class="label">Materials &amp; Process</span> &mdash; Material &amp; Process Specification Review and Call-Out &middot; Processing Methods for Metallic / Non-Metallic / Composite Materials &middot; Failure Analysis &amp; Corrective Action &middot; Vendor Selection &amp; Qualification &middot; Materials Test Laboratory (XRF &middot; ICP-OES &middot; Microscopy &middot; Cross-Sectioning for Hardness &amp; Thickness)</p>
+      <p><span class="label">Design, Tooling &amp; Quality</span> &mdash; Tooling / Fixture / Jig Design &middot; Racking &amp; Masking &middot; GD&amp;T &middot; Metrology &middot; DFM / DFA &middot; Automated Process Equipment (Fanuc Robotics &middot; PLC) &middot; CAD (SolidWorks &middot; AutoCAD)</p>
+      <p><span class="label">Manufacturing Data &amp; Tooling</span> &mdash; SPC Dashboards &middot; Control-Limit Automation &middot; ETL &amp; Process-Data Unification &middot; Internal Web Apps &amp; Dashboards &middot; Manufacturing Data Analysis &middot; Automated RCCA / 8D Drafting</p>
+    </section>
+
+    <section class="oneline">
+      <h2>Standards &amp; Compliance</h2>
+      <p>NADCAP &middot; AS9100D &middot; AS9110 &middot; First Article Inspection (AS9102) &middot; AMS2750 (Pyrometry) &middot; QMS &middot; FAA Advisory Circulars &middot; ITAR &middot; Safety / Environmental / Regulatory Compliance (EHS, EPA / RCRA wastewater) &middot; led NADCAP, AS9100, and customer audits across multiple OEMs</p>
+    </section>
+
+    <section class="oneline">
+      <h2>Technical Skills</h2>
+      <p>SPC / Statistical Process Control &middot; Control-Limit Calculation &middot; GD&amp;T &middot; Metrology &middot; CAD (SolidWorks, AutoCAD) &middot; Fanuc Robotics &middot; PLC &middot; Tank Chemistry &middot; XRF &middot; ICP-OES &middot; Microscopy &middot; Cross-Sectioning &middot; ERP / MRP Systems &middot; Manufacturing Data Analysis &middot; Engineering Drawings / Blueprints &middot; Process Data Pipelines &amp; Dashboards</p>
+    </section>
+
+    <section class="selected-work" id="projects">
+      <h2>Applied Tooling</h2>
+      <p class="tooling-note">Internal tools I built to solve problems on my own lines &mdash; audit-readiness, SPC, and root-cause &mdash; each with the decision record behind it.</p>
+
+      <article class="proj">
+        <div class="row"><span class="t"><strong>Composite Compliance Tracker</strong> <span class="ti">&mdash; NADCAP AC7118 readiness from data</span></span></div>
+        <p class="pd">Audit-readiness tracker for composites (NADCAP AC7118): logs the time-sensitive controls &mdash; prepreg out-time, cure cycles, lot traceability &mdash; and maps each record to the criterion it evidences, so readiness is <em>computed from data, not ticked</em>. A missing or expired record flips a criterion to not-ready. Django &middot; Postgres &middot; Plotly. <a href="https://composite-compliance-tracker.onrender.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/composite-compliance-tracker">Code &amp; decision record</a>.</p>
+      </article>
+
+      <article class="proj">
+        <div class="row"><span class="t"><strong>SPC Sentinel</strong> <span class="ti">&mdash; real-time SPC with drift prediction</span></span></div>
+        <p class="pd">Live statistical-process-control dashboard that forecasts when a wet-process line will drift out of spec <em>before</em> it breaches &mdash; explainable Western Electric / Nelson rules plus a slope-significance trend gate tuned to protect operator trust over raw accuracy (no alert fatigue). Django &middot; Channels (WebSocket) &middot; NumPy/SciPy &middot; Plotly. <a href="https://spc.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/spc-sentinel">Code &amp; decision record</a>.</p>
+      </article>
+
+      <article class="proj">
+        <div class="row"><span class="t"><strong>RCCA Copilot</strong> <span class="ti">&mdash; root-cause &amp; corrective-action drafting</span></span></div>
+        <p class="pd">Drafts a structured 8D / 5-Why root-cause investigation from a nonconformance &mdash; every candidate cause cites retrieved evidence or is flagged <em>insufficient evidence</em>, and nothing reaches a CAPA without engineer sign-off. Django &middot; Postgres &middot; Claude (tool-use). <a href="https://rcca.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/rcca-copilot">Code &amp; decision record</a>.</p>
+      </article>
+    </section>
+
+    <section class="edu">
+      <h2>Education</h2>
+      <p><strong>B.S., Chemistry</strong> &mdash; University of Michigan, 1996</p>
+    </section>
+
+    <footer class="site">
+      <span class="nm">Hector Garza</span>
+      <div>
+        <a href="mailto:hgg@hector-garza.com">hgg@hector-garza.com</a>
+        <a href="https://github.com/cognitivefactory-hector">GitHub</a>
+      </div>
+    </footer>
   </div>
-
-  <header class="hero">
-    <p class="kick">Senior Process Engineer · Aerospace Special Processes</p>
-    <h1>Hector<br>Ga<em>r</em>za</h1>
-    <div class="thesis">
-      <p class="big"><b>20+ years</b> turning aerospace special processes from failing to capable — chemical processing, coatings, heat treat, composites, welding, and surface enhancement, all NADCAP-audited. I own processes end-to-end and document the judgment behind every decision — and build the SPC and data tooling that keeps the floor measurable.</p>
-      <div class="panel">
-        <div class="row"><div class="k">Failure rate, redesigned</div><div class="v">67% <small>→ 3%</small></div></div>
-        <div class="row"><div class="k">Process capability (Cpk)</div><div class="v">0.12 <small>→ 1.33</small></div></div>
-        <div class="row"><div class="k">FPI first-pass yield</div><div class="v">32% <small>→ 92%</small></div></div>
-      </div>
-    </div>
-    <a class="dl" href="/Hector-Garza-Process-Engineer.pdf" download>Download résumé ↓</a>
-  </header>
-
-  <header class="resume-header">
-    <h1>Hector Garza</h1>
-    <p class="contact">
-      Greensboro, NC &middot; <a href="mailto:hgg@hector-garza.com">hgg@hector-garza.com</a>
-    </p>
-  </header>
-
-  <section class="summary">
-    <h2>Summary</h2>
-    <p>
-      Aerospace special-processes engineer with 20+ years across chemical processing, coatings,
-      heat treating, composites, welding, and surface enhancement. Owns processes end-to-end &mdash;
-      from new-process qualification through SPC-driven production control, NCA / RCCA, and
-      tooling and fixture design &mdash; throughout on ITAR-controlled aerospace programs. NADCAP and
-      AS9100 fluent; led NADCAP, AS9100, and customer audits across multiple OEMs. Partners across
-      Quality, Maintenance, and Production to lead Lean / Six Sigma / Kaizen continuous-improvement
-      initiatives, standardizes work through SOPs and work instructions, monitors KPIs, and ensures
-      safety, environmental, and regulatory compliance. Track record of turning failing lines into
-      capable ones &mdash; most recently cutting a process failure rate from 67% to 3% and driving
-      reworks to near zero.
-    </p>
-  </section>
-
-  <section class="capabilities">
-    <h2>Core Capabilities</h2>
-    <p>
-      <span class="label">Process &amp; Manufacturing</span> &mdash; New-Process Scoping &amp; Production
-      Qualification &middot; New Product Introduction (NPI) &amp; Design for Manufacturability &middot;
-      SPC / Statistical Process Control &middot; Process Capability (Cpk) Improvement &middot;
-      Yield &amp; Cycle-Time Reduction &middot; Tooling &amp; Fixture Design &middot;
-      Traveler / Work-Instruction &amp; Standard-Operating-Procedure (SOP) Development &middot;
-      Engineering Drawing &amp; Blueprint Interpretation &middot;
-      Cross-Functional Collaboration (Quality &middot; Maintenance &middot; Production) &middot;
-      Root-Cause Analysis &amp; Corrective-Action Implementation (NCA / RCCA) &middot; Tank Chemistry &middot;
-      Wastewater Treatment &middot; Pyrometry &middot; First Article Inspection &middot; Customer &amp; NADCAP Audits
-    </p>
-    <p>
-      <span class="label">Continuous Improvement &amp; Quality Tools</span> &mdash; Lean &middot; Six Sigma &middot;
-      Kaizen &middot; 5S &middot; PFMEA / FMEA &middot; DOE (Design of Experiments) &middot; 8D &middot;
-      PPAP / APQP &middot; Control Plans &middot; CAPA
-    </p>
-    <p>
-      <span class="label">Materials &amp; Process</span> &mdash; Material &amp; Process Specification Review
-      and Call-Out &middot; Processing Methods for Metallic / Non-Metallic / Composite Materials &middot;
-      Failure Analysis &amp; Corrective Action &middot; Vendor Selection &amp; Qualification &middot;
-      Materials Test Laboratory (XRF &middot; ICP-OES &middot; Microscopy &middot; Cross-Sectioning for
-      Hardness &amp; Thickness)
-    </p>
-    <p>
-      <span class="label">Design, Tooling &amp; Quality</span> &mdash; Tooling / Fixture / Jig Design &middot;
-      Racking &amp; Masking &middot; GD&amp;T &middot; Metrology &middot; DFM / DFA &middot;
-      Automated Process Equipment (Fanuc Robotics &middot; PLC) &middot; CAD (SolidWorks &middot; AutoCAD)
-    </p>
-    <p>
-      <span class="label">Manufacturing Data &amp; Tooling</span> &mdash; SPC Dashboards &middot;
-      Control-Limit Automation &middot; ETL &amp; Process-Data Unification &middot;
-      Internal Web Apps &amp; Dashboards &middot; Manufacturing Data Analysis &middot; Automated RCCA / 8D Drafting
-    </p>
-  </section>
-
-  <section class="certs">
-    <h2>Standards &amp; Compliance</h2>
-    <p>
-      NADCAP &middot; AS9100D &middot; AS9110 &middot; First Article Inspection (AS9102) &middot; AMS2750 (Pyrometry) &middot;
-      QMS &middot; FAA Advisory Circulars &middot; ITAR &middot; Safety / Environmental / Regulatory Compliance (EHS, EPA / RCRA wastewater) &middot;
-      led NADCAP, AS9100, and customer audits across multiple OEMs
-    </p>
-  </section>
-
-  <section class="experience" id="experience">
-    <h2>Experience</h2>
-
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>TAT Technologies</strong> &mdash; Process Engineer</span>
-        <span class="meta">Greensboro, NC &middot; 2024 – Present</span>
-      </div>
-      <ul class="bullets">
-        <li>Manage 7 special-process lines &mdash; chrome plating; chromic / Type II anodize and anodize strip; nickel plate / strip / passivation; chromate conversion coating / etch; cadmium plate / strip; temper etch / descale; and solvent / alkaline clean.</li>
-        <li>Reduced process failure rate from 67% to 3% within 3 months and raised process capability (Cpk) from 0.12 to above 1.33 through workflow redesign, standardization, and SPC-driven control, driving reworks to near zero.</li>
-        <li>Raised NDT fluorescent-penetrant-inspection (FPI) first-pass yield from 32% to 92% and cut a machine-grinding operation from 16 hours to 2 hours.</li>
-        <li>Lead 5&ndash;12 NCA / RCCA (8D / 5-Why) investigations per month to closure and corrective-action implementation, working cross-functionally with Quality, Maintenance, and Production.</li>
-        <li>Built SPC dashboards with automated control-limit calculation and daily / weekly / monthly KPI tracking on tank chemistry, deposition thickness, and etch rate; unified production and quality data from machines, spreadsheets, and quality records.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>Machine Specialties Inc.</strong> &mdash; Process Engineer</span>
-        <span class="meta">Whitsett, NC &middot; 2019 – 2024</span>
-      </div>
-      <ul class="bullets">
-        <li>Owned 4 special-process lines end-to-end &mdash; cadmium plate / strip, aerospace paint / strip, passivation, and anodize (Type I/IB, II, III) with chromate conversion coating (Type I / II) &mdash; plus composite bonding and pyrometry.</li>
-        <li>Raised line yield from 62% to 88% through workflow and process-control improvements.</li>
-        <li>Led new product / process introduction (NPI) &mdash; qualified and certified 3 new processes from scoping through production launch &mdash; titanium anodize, cadmium plate, and dry-film lubricant (fluorinated polymer) &mdash; to specification and NADCAP, using PFMEA and DOE to dial in the processes and ensure manufacturability.</li>
-        <li>Led and passed 3 NADCAP and 2 AS9100 audits; maintained certification compliance across customer specs.</li>
-        <li>Performed prepreg layup and oven cure for bonded composite assemblies; ran pyrometry on cure / thermal equipment.</li>
-        <li>Designed process tooling, fixtures, jigs, racking, and masking; applied GD&amp;T and metrology to verify conformance, with DFM / DFA producibility input on new-process introductions.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>Senior SSP Aerospace</strong> &mdash; Quality Assurance Specialist</span>
-        <span class="meta">Burbank, CA &middot; 2018 – 2019</span>
-      </div>
-      <ul class="bullets">
-        <li>Analyzed and corrected methods in chemical processing; supported and passed NADCAP welding, chemical-processing, and heat-treat audits and AS9100 / customer-spec compliance.</li>
-        <li>Performed hand layup and oven cure of composite skins / panels and detail bonds for harnesses, under NADCAP AC7118 (composites).</li>
-        <li>Audited composite material control, pyrometry, and material storage (out-time / cold storage) for AC7118 and customer-spec compliance.</li>
-        <li>Welded and audited TIG, MIG, and seam welding to NADCAP AC7110 (incl. /4, /5, /12) and customer specs.</li>
-        <li>Conducted internal audits; supported EHS and Manufacturing Engineering.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>Moog Inc.</strong> &mdash; Materials &amp; Process Chemist</span>
-        <span class="meta">Torrance, CA &middot; 2012 – 2018</span>
-      </div>
-      <ul class="bullets">
-        <li>Directed plating, painting, shot peening, blasting, and heat-treat processes for aerospace controls; trained 25&ndash;35 technicians and senior operators.</li>
-        <li>Reviewed and approved materials and process call-outs on engineering drawings; selected and qualified 18 process vendors (test labs, alloy and service providers, technical support) per AS9100.</li>
-        <li>Started up and qualified robotic shot peening, brush plating, and zinc-nickel plating to NADCAP and customer approval; programmed and troubleshot Fanuc robots, pulsing rectifiers, and PLC systems.</li>
-        <li>Maintained NADCAP and AS9100 compliance; ran pyrometry on thermal-processing equipment, wet-process tank chemistry, XRF, microscopy, leak detection, and mechanical testing.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>Danaher</strong> &mdash; Materials R&amp;D &middot; Lab Technician → Research Associate</span>
-        <span class="meta">Orange, CA &middot; 2000 – 2012</span>
-      </div>
-      <ul class="bullets">
-        <li>Formulated thermoset and UV-curing (photoset) polymer composites and tuned them for target mechanical properties; carried formulations from lab through pilot to production &mdash; the materials- and process-development work behind new product introductions.</li>
-        <li>Technical prototyping lead &mdash; designed and built custom equipment for compounding composite formulations (Allen-Bradley PLC control) and the fixtures and instrumentation for mechanical testing of the finished composites, defining success metrics and expected behavior before each build.</li>
-        <li>Ran data-driven DOE studies characterizing end-product composites to ASTM and ISO methods &mdash; viscosity / dispersion, fatigue, environmental / chemical degradation, and wear &mdash; with microcontroller-based data-acquisition rigs (load cells, pressure and flow transducers) for synchronized multi-channel capture.</li>
-        <li>Built Python and Excel analysis tools that let engineers and interns run experiments and report results independently; presented validation-backed recommendations to leadership to gate which concepts advanced, and kept procedures and design data in sync with USC researchers and across multiple Southern California sites.</li>
-      </ul>
-    </article>
-
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>McCurdy Circuits &amp; Chromalloy</strong> &mdash; Process Engineering &amp; Metallurgical Lab QA</span>
-        <span class="meta">California &middot; 1996 – 2000</span>
-      </div>
-      <ul class="bullets">
-        <li>PCB process engineering (plating-bath chemistry, copper-plate / etch / lamination, first-article testing) and metallurgical-lab QA (ICP-OES, AA, GC, FT-IR, microsectioning / cross-sections); operated PVD and plasma (thermal-spray) coating chemical processes on aerospace components.</li>
-      </ul>
-    </article>
-  </section>
-
-  <section class="skills">
-    <h2>Technical Skills</h2>
-    <p>
-      SPC / Statistical Process Control &middot; Control-Limit Calculation &middot; GD&amp;T &middot;
-      Metrology &middot; CAD (SolidWorks, AutoCAD) &middot; Fanuc Robotics &middot; PLC &middot;
-      Tank Chemistry &middot; XRF &middot; ICP-OES &middot; Microscopy &middot; Cross-Sectioning &middot;
-      ERP / MRP Systems &middot; Manufacturing Data Analysis &middot; Engineering Drawings / Blueprints &middot;
-      Process Data Pipelines &amp; Dashboards
-    </p>
-  </section>
-
-  <section class="education">
-    <h2>Education</h2>
-    <p><strong>B.S., Chemistry</strong> &mdash; University of Michigan, 1996</p>
-  </section>
-
-  <section class="selected-work" id="projects" style="break-before: page; page-break-before: always;">
-    <h2>Applied Tooling</h2>
-    <p class="tooling-note">Internal tools I built to solve problems on my own lines &mdash; audit-readiness, SPC, and root-cause &mdash; each with the decision record behind it.</p>
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>Composite Compliance Tracker</strong> &mdash; NADCAP AC7118 readiness from data</span>
-        <span class="meta"><a href="https://composite-compliance-tracker.onrender.com">composite-compliance-tracker.onrender.com</a></span>
-      </div>
-      <ul class="bullets">
-        <li>Audit-readiness tracker for composites (NADCAP AC7118): logs the time-sensitive controls &mdash; prepreg out-time, cure cycles, lot traceability &mdash; and maps each record to the criterion it evidences, so readiness is <em>computed from data, not ticked</em>. A missing or expired record flips a criterion to not-ready. Django &middot; Postgres &middot; Plotly. <a href="https://composite-compliance-tracker.onrender.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/composite-compliance-tracker">Code &amp; decision record</a>.</li>
-      </ul>
-    </article>
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>SPC Sentinel</strong> &mdash; real-time SPC with drift prediction</span>
-        <span class="meta"><a href="https://spc.hector-garza.com">spc.hector-garza.com</a></span>
-      </div>
-      <ul class="bullets">
-        <li>Live statistical-process-control dashboard that forecasts when a wet-process line will drift out of spec <em>before</em> it breaches &mdash; explainable Western Electric / Nelson rules plus a slope-significance trend gate tuned to protect operator trust over raw accuracy (no alert fatigue). Django &middot; Channels (WebSocket) &middot; NumPy/SciPy &middot; Plotly. <a href="https://spc.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/spc-sentinel">Code &amp; decision record</a>.</li>
-      </ul>
-    </article>
-    <article class="job">
-      <div class="role">
-        <span class="title"><strong>RCCA Copilot</strong> &mdash; root-cause &amp; corrective-action drafting</span>
-        <span class="meta"><a href="https://rcca.hector-garza.com">rcca.hector-garza.com</a></span>
-      </div>
-      <ul class="bullets">
-        <li>Drafts a structured 8D / 5-Why root-cause investigation from a nonconformance &mdash; every candidate cause cites retrieved evidence or is flagged <em>insufficient evidence</em>, and nothing reaches a CAPA without engineer sign-off. Django &middot; Postgres &middot; Claude (tool-use). <a href="https://rcca.hector-garza.com">Live demo</a> &middot; <a href="https://github.com/cognitivefactory-hector/rcca-copilot">Code &amp; decision record</a>.</li>
-      </ul>
-    </article>
-  </section>
-
-  <footer class="site-footer">
-    <span class="nm">Hector Garza</span>
-    <div>
-      <a href="mailto:hgg@hector-garza.com">hgg@hector-garza.com</a>
-      <a href="https://github.com/cognitivefactory-hector">GitHub</a>
-    </div>
-  </footer>
 </body>
 </html>
