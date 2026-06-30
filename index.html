@@ -104,12 +104,10 @@
     }
 
     .capabilities p,
-    .ventures p,
     .certs p,
     .skills p { margin: 3pt 0; }
 
     .capabilities .label,
-    .ventures .label,
     .certs .label,
     .skills .label {
       font-weight: 700;
@@ -182,10 +180,10 @@
       /* print header + summary are redundant with the hero on screen */
       .resume-header, .summary { display: none; }
 
-      /* reorder for the web: hero → experience → competencies → standards → technical skills → applied tooling → ventures → education → tools → footer */
+      /* reorder for the web: hero → experience → competencies → standards → technical skills → applied tooling → education → tools → footer */
       .site-nav { order: -1; }  .hero { order: 0; }  .experience { order: 1; }
       .capabilities { order: 2; }  .certs { order: 3; }  .skills { order: 4; }
-      .selected-work { order: 5; }  .ventures { order: 6; }  .education { order: 7; }
+      .selected-work { order: 5; }  .education { order: 7; }
       .stack { order: 8; }  .site-footer { order: 9; }
 
       section { margin: 0; }
@@ -244,10 +242,8 @@
       .experience ul.bullets { padding-left: 18px; }
       .experience ul.bullets li { font-size: 14.5px; color: #3b362e; margin-bottom: 5px; }
 
-      /* VENTURES / EDUCATION / TOOLS */
-      .ventures .role .title strong, .ventures .label { color: var(--ink); font-weight: 700; }
-      .ventures .label { color: var(--accent); }
-      .ventures p, .education p { font-size: 15px; }
+      /* EDUCATION / TOOLS */
+      .education p { font-size: 15px; }
       .education p strong { font-family: 'Fraunces', serif; font-weight: 600; }
       .stack .stack-line { font-size: 12.5px; color: var(--muted); }
 
@@ -320,8 +316,6 @@
     <h1>Hector Garza</h1>
     <p class="contact">
       Greensboro, NC &middot; <a href="mailto:hgg@hector-garza.com">hgg@hector-garza.com</a>
-      <br />
-      <a href="https://smartxchain.com">smartxchain.com</a> &middot; <a href="https://cognitivefactory.ai">cognitivefactory.ai</a>
     </p>
   </header>
 
@@ -478,16 +472,6 @@
     </p>
   </section>
 
-  <section class="ventures">
-    <h2>Independent Ventures</h2>
-    <div class="role">
-      <span class="title"><strong>Founder</strong> &mdash; SmartXChain &amp; Cognitive Factory</span>
-      <span class="meta">2021 – Present</span>
-    </div>
-    <p><span class="label">smartxchain.com</span> &mdash; independent analysis on frontier manufacturing and process technology.</p>
-    <p><span class="label">cognitivefactory.ai</span> &mdash; advising industrial and knowledge-work teams on modern data and automation practices.</p>
-  </section>
-
   <section class="education">
     <h2>Education</h2>
     <p><strong>B.S., Chemistry</strong> &mdash; University of Michigan, 1996</p>
@@ -562,8 +546,6 @@
     <div>
       <a href="mailto:hgg@hector-garza.com">hgg@hector-garza.com</a>
       <a href="https://github.com/cognitivefactory-hector">GitHub</a>
-      <a href="https://smartxchain.com">smartxchain.com</a>
-      <a href="https://cognitivefactory.ai">cognitivefactory.ai</a>
     </div>
   </footer>
 </body>
